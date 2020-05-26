@@ -130,3 +130,100 @@ func postorderTraversal(_ root: TreeNode?) -> [Int] {
     
     
 }
+/**
+ 429. N叉树的层序遍历
+ 给定一个 N 叉树，返回其节点值的层序遍历。 (即从左到右，逐层遍历)。
+
+ 例如，给定一个 3叉树 :
+
+  
+
+
+
+  
+
+ 返回其层序遍历:
+
+ [
+      [1],
+      [3,2,4],
+      [5,6]
+ ]
+  
+
+ 说明:
+
+ 树的深度不会超过 1000。
+ 树的节点总数不会超过 5000。
+ */
+func levelOrder(_ root: Node?) -> [[Int]] {
+    var res = [[Int]]()
+    
+    guard let root = root else {
+        return res
+    }
+     //MARK: 使用队列的方法
+//    var queue = [root]
+//
+//    while !queue.isEmpty {
+//        let count = queue.count
+//        var tmpArray = [Node]()
+//        var tmpRes = [Int]()
+//
+//        for _ in 0..<count {
+//            let item = queue.removeFirst()
+//            tmpRes.append(item.val)
+//            item.children.forEach { (node) in
+//                tmpArray.append(node)
+//            }
+//
+//        }
+//        res.append(tmpRes)
+//        queue = tmpArray
+//    }
+ //MARK: 使用BFS
+     
+    func bfs(node : Node? ,level:Int) -> Void {
+   
+        guard let node = node  else {
+            return
+        }
+        if level == res.count {
+            res.append([Int]())
+        }
+        res[level].append(node.val)
+        for item in node.children {
+            
+            bfs(node: item, level: level+1)
+        }
+        
+    }
+    bfs(node: root, level: 0)
+    return res
+    
+}
+ //MARK: 二叉树
+func levelOrder(_ root: TreeNode?) -> [[Int]] {
+    var res : [[Int]] = []
+    guard let root = root else {
+        return res
+    }
+   // var queue = [root]
+    func bfs(node : TreeNode? ,level :Int) -> Void {
+        guard let node = node else {
+            return
+        }
+        if res.count == level  {
+            res.append([Int]())
+        }
+        res[level].append(node.val)
+        bfs(node: node.left, level: level+1)
+        bfs(node: node.right, level: level+1)
+        
+    }
+    bfs(node: root, level: 0)
+    
+    
+    return res
+    
+}

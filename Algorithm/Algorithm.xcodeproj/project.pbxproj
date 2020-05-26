@@ -11,6 +11,7 @@
 		5256E74D2477A5FE0005CB62 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5256E74C2477A5FD0005CB62 /* TreeNode.swift */; };
 		5256E74F2477A6A00005CB62 /* TraversalTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5256E74E2477A6A00005CB62 /* TraversalTree.swift */; };
 		5256E7512477B83D0005CB62 /* BST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5256E7502477B83D0005CB62 /* BST.swift */; };
+		529D786E247BC5BE00EB7300 /* Rob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529D786D247BC5BE00EB7300 /* Rob.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,7 @@
 		5256E74C2477A5FD0005CB62 /* TreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
 		5256E74E2477A6A00005CB62 /* TraversalTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraversalTree.swift; sourceTree = "<group>"; };
 		5256E7502477B83D0005CB62 /* BST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BST.swift; sourceTree = "<group>"; };
+		529D786D247BC5BE00EB7300 /* Rob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rob.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 		5256E7432477A4FA0005CB62 /* Algorithm */ = {
 			isa = PBXGroup;
 			children = (
+				529D786C247BC59800EB7300 /* Dynamic */,
 				5256E74B2477A5380005CB62 /* BinaryTree */,
 				5256E7442477A4FA0005CB62 /* main.swift */,
 			);
@@ -77,6 +80,14 @@
 				5256E7502477B83D0005CB62 /* BST.swift */,
 			);
 			path = BinaryTree;
+			sourceTree = "<group>";
+		};
+		529D786C247BC59800EB7300 /* Dynamic */ = {
+			isa = PBXGroup;
+			children = (
+				529D786D247BC5BE00EB7300 /* Rob.swift */,
+			);
+			path = Dynamic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +151,7 @@
 				5256E7452477A4FA0005CB62 /* main.swift in Sources */,
 				5256E7512477B83D0005CB62 /* BST.swift in Sources */,
 				5256E74D2477A5FE0005CB62 /* TreeNode.swift in Sources */,
+				529D786E247BC5BE00EB7300 /* Rob.swift in Sources */,
 				5256E74F2477A6A00005CB62 /* TraversalTree.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
