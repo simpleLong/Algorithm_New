@@ -19,18 +19,32 @@ import Foundation
  你可以迭代或递归地反转链表。你能否用两种方法解决这道题？
  
  */
+
+ //MARK: 迭代
+
+//public  func reverseList(_ head: ListNode?) -> ListNode? {
+//
+//    var pre : ListNode? = nil
+//    var cur = head
+//
+//    while cur != nil  {
+//
+//        (cur!.next,pre,cur) = (pre,cur ,cur?.next)
+//
+//    }
+//
+//    return pre
+//}
+ //MARK: 递归方式
 public  func reverseList(_ head: ListNode?) -> ListNode? {
 
-    var pre : ListNode? = nil
-    var cur = head
-    
-    while cur != nil  {
-
-        (cur!.next,pre,cur) = (pre,cur ,cur?.next)
-        print("cur===",cur?.val)
-     
-        
+    if head?.next == nil {
+        return head
     }
+    let p  = reverseList(head?.next)
+    head?.next?.next = head
+    head?.next = nil
     
-    return pre
+    return p
+    
 }
