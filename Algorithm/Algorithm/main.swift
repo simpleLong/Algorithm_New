@@ -20,7 +20,9 @@ node2.next = node3
 node3.next = node4
 node4.next = node5
 
-let res = reverseList(node1)
+//let res = reverseList(node1)
+let node =   swapPairs(node1)
+
 
 
 
