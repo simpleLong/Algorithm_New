@@ -70,11 +70,15 @@ return head
 
 var successor : ListNode?
 
+
+
 func reverseNList(_ head: ListNode? , _ n : Int) -> ListNode? {
     if n == 1 {
         successor = head?.next
+        
         return head
     }
+
     let last = reverseNList(head?.next, n-1)
     
     head?.next?.next = head
@@ -83,3 +87,82 @@ func reverseNList(_ head: ListNode? , _ n : Int) -> ListNode? {
     
     
 }
+/**
+ 
+ 25. K 个一组翻转链表
+ 给你一个链表，每 k 个节点一组进行翻转，请你返回翻转后的链表。
+
+ k 是一个正整数，它的值小于或等于链表的长度。
+
+ 如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。
+
+  
+
+ 示例：
+
+ 给你这个链表：1->2->3->4->5
+
+ 当 k = 2 时，应当返回: 2->1->4->3->5
+
+ 当 k = 3 时，应当返回: 3->2->1->4->5
+
+  
+
+ 说明：
+
+ 你的算法只能使用常数的额外空间。
+ 你不能只是单纯的改变节点内部的值，而是需要实际进行节点交换。
+ 通过次数71,150提交次数116,401
+ */
+
+
+var lastHead :ListNode?
+
+public  func reverseKGroup(_ head: ListNode?, _ k: Int) -> ListNode? {
+
+
+    let dummyHead = ListNode.init(0)
+    dummyHead.next = head
+    
+    var pre : ListNode? = dummyHead
+    var end : ListNode? = dummyHead
+    var first = head
+
+    for _ in 0..<k {
+        end =  end?.next
+    }
+    
+    while end != nil {
+        let next = end?.next
+        end?.next = nil
+        pre?.next = reverseList(first)
+        first?.next = next
+        
+        pre = first
+        end = first
+        first = next//pre?.next
+        
+        for _ in 0..<k {
+            end = end?.next
+        }
+        
+        
+    }
+    
+
+
+    return dummyHead.next
+  }
+
+func reverseList(head: ListNode?) -> ListNode? {
+    var cur = head
+    var pre: ListNode? = nil
+
+    while cur != nil {
+        let next = cur?.next
+        (cur!.next ,pre , cur) = (pre ,cur ,next)
+        
+    }
+    return pre
+}
+

@@ -21,7 +21,17 @@ node3.next = node4
 node4.next = node5
 
 //let res = reverseList(node1)
-let node =   swapPairs(node1)
+//let node =   swapPairs(node1)
+//successor = node1
+//
+var isNoNeed = false
+let node = reverseKGroup(node1, 3)
+
+//let node = reverseNGroup_new(node1, node1, 4, &isNoNeed)
+
+
+print("node===",node?.val)
+
 
 
 
