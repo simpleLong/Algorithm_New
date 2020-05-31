@@ -10,9 +10,9 @@ import Foundation
 /**
  206. 反转链表
  反转一个单链表。
-
+ 
  示例:
-
+ 
  输入: 1->2->3->4->5->NULL
  输出: 5->4->3->2->1->NULL
  进阶:
@@ -20,7 +20,7 @@ import Foundation
  
  */
 
- //MARK: 迭代
+//MARK: 迭代
 
 //public  func reverseList(_ head: ListNode?) -> ListNode? {
 //
@@ -35,9 +35,9 @@ import Foundation
 //
 //    return pre
 //}
- //MARK: 递归方式
+//MARK: 递归方式
 public  func reverseList(_ head: ListNode?) -> ListNode? {
-
+    
     if head?.next == nil {
         return head
     }
@@ -51,26 +51,24 @@ public  func reverseList(_ head: ListNode?) -> ListNode? {
 /**
  92. 反转链表 II
  反转从位置 m 到 n 的链表。请使用一趟扫描完成反转。
-
+ 
  说明:
  1 ≤ m ≤ n ≤ 链表长度。
-
+ 
  示例:
-
+ 
  输入: 1->2->3->4->5->NULL, m = 2, n = 4
  输出: 1->4->3->2->5->NULL
  */
 func reverseBetween(_ head: ListNode?, _ m: Int, _ n: Int) -> ListNode? {
-if m == 1 {
-    return reverseNList(head, n)
-}
-head?.next = reverseBetween(head?.next, m-1, n-1)
-return head
+    if m == 1 {
+        return reverseNList(head, n)
+    }
+    head?.next = reverseBetween(head?.next, m-1, n-1)
+    return head
 }
 
 var successor : ListNode?
-
-
 
 func reverseNList(_ head: ListNode? , _ n : Int) -> ListNode? {
     if n == 1 {
@@ -78,7 +76,7 @@ func reverseNList(_ head: ListNode? , _ n : Int) -> ListNode? {
         
         return head
     }
-
+    
     let last = reverseNList(head?.next, n-1)
     
     head?.next?.next = head
@@ -91,25 +89,25 @@ func reverseNList(_ head: ListNode? , _ n : Int) -> ListNode? {
  
  25. K 个一组翻转链表
  给你一个链表，每 k 个节点一组进行翻转，请你返回翻转后的链表。
-
+ 
  k 是一个正整数，它的值小于或等于链表的长度。
-
+ 
  如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。
-
-  
-
+ 
+ 
+ 
  示例：
-
+ 
  给你这个链表：1->2->3->4->5
-
+ 
  当 k = 2 时，应当返回: 2->1->4->3->5
-
+ 
  当 k = 3 时，应当返回: 3->2->1->4->5
-
-  
-
+ 
+ 
+ 
  说明：
-
+ 
  你的算法只能使用常数的额外空间。
  你不能只是单纯的改变节点内部的值，而是需要实际进行节点交换。
  通过次数71,150提交次数116,401
@@ -119,15 +117,15 @@ func reverseNList(_ head: ListNode? , _ n : Int) -> ListNode? {
 var lastHead :ListNode?
 
 public  func reverseKGroup(_ head: ListNode?, _ k: Int) -> ListNode? {
-
-
+    
+    
     let dummyHead = ListNode.init(0)
     dummyHead.next = head
     
     var pre : ListNode? = dummyHead
     var end : ListNode? = dummyHead
     var first = head
-
+    
     for _ in 0..<k {
         end =  end?.next
     }
@@ -148,16 +146,14 @@ public  func reverseKGroup(_ head: ListNode?, _ k: Int) -> ListNode? {
         
         
     }
-    
-
 
     return dummyHead.next
-  }
+}
 
 func reverseList(head: ListNode?) -> ListNode? {
     var cur = head
     var pre: ListNode? = nil
-
+    
     while cur != nil {
         let next = cur?.next
         (cur!.next ,pre , cur) = (pre ,cur ,next)
