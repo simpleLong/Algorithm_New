@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		524CAF372480A6010080144F /* RotateNodeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CAF362480A6010080144F /* RotateNodeList.swift */; };
 		5256E7452477A4FA0005CB62 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5256E7442477A4FA0005CB62 /* main.swift */; };
 		5256E74D2477A5FE0005CB62 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5256E74C2477A5FD0005CB62 /* TreeNode.swift */; };
 		5256E74F2477A6A00005CB62 /* TraversalTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5256E74E2477A6A00005CB62 /* TraversalTree.swift */; };
@@ -15,6 +14,8 @@
 		527F08EB247CAF8500668911 /* ReverseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527F08EA247CAF8500668911 /* ReverseList.swift */; };
 		527F08ED247CB00C00668911 /* ListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527F08EC247CB00C00668911 /* ListNode.swift */; };
 		529D786E247BC5BE00EB7300 /* Rob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529D786D247BC5BE00EB7300 /* Rob.swift */; };
+		52A62BB0248491A200009465 /* Sum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A62BAF248491A200009465 /* Sum.swift */; };
+		52A62BB22484B5F800009465 /* FirstMissingPositive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A62BB12484B5F800009465 /* FirstMissingPositive.swift */; };
 		52ADE1CD247FA77E00E82CEC /* MergeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ADE1CC247FA77E00E82CEC /* MergeList.swift */; };
 		52ADE1CF247FC03D00E82CEC /* SwapPairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ADE1CE247FC03D00E82CEC /* SwapPairs.swift */; };
 		8A0848FD2482699B00D48112 /* RotateListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0848FC2482699B00D48112 /* RotateListNode.swift */; };
@@ -37,7 +38,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		524CAF362480A6010080144F /* RotateNodeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateNodeList.swift; sourceTree = "<group>"; };
 		5256E7412477A4FA0005CB62 /* Algorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Algorithm; sourceTree = BUILT_PRODUCTS_DIR; };
 		5256E7442477A4FA0005CB62 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		5256E74C2477A5FD0005CB62 /* TreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
@@ -46,6 +46,8 @@
 		527F08EA247CAF8500668911 /* ReverseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseList.swift; sourceTree = "<group>"; };
 		527F08EC247CB00C00668911 /* ListNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNode.swift; sourceTree = "<group>"; };
 		529D786D247BC5BE00EB7300 /* Rob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rob.swift; sourceTree = "<group>"; };
+		52A62BAF248491A200009465 /* Sum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sum.swift; sourceTree = "<group>"; };
+		52A62BB12484B5F800009465 /* FirstMissingPositive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstMissingPositive.swift; sourceTree = "<group>"; };
 		52ADE1CC247FA77E00E82CEC /* MergeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeList.swift; sourceTree = "<group>"; };
 		52ADE1CE247FC03D00E82CEC /* SwapPairs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapPairs.swift; sourceTree = "<group>"; };
 		8A0848FC2482699B00D48112 /* RotateListNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateListNode.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		5256E7432477A4FA0005CB62 /* Algorithm */ = {
 			isa = PBXGroup;
 			children = (
+				52A62BAE2484917E00009465 /* Array */,
 				527F08E9247CAF5100668911 /* ListNode */,
 				529D786C247BC59800EB7300 /* Dynamic */,
 				5256E74B2477A5380005CB62 /* BinaryTree */,
@@ -111,14 +114,10 @@
 				527F08EA247CAF8500668911 /* ReverseList.swift */,
 				52ADE1CC247FA77E00E82CEC /* MergeList.swift */,
 				52ADE1CE247FC03D00E82CEC /* SwapPairs.swift */,
-
-				524CAF362480A6010080144F /* RotateNodeList.swift */,
-
 				8A0848FC2482699B00D48112 /* RotateListNode.swift */,
 				8A933AEC2483FBEB00D6B0F7 /* SortList.swift */,
 				8A933AEE2484001700D6B0F7 /* DeleteNode.swift */,
 				8A933AF02484087D00D6B0F7 /* GetIntersectionNode.swift */,
-
 			);
 			path = ListNode;
 			sourceTree = "<group>";
@@ -129,6 +128,15 @@
 				529D786D247BC5BE00EB7300 /* Rob.swift */,
 			);
 			path = Dynamic;
+			sourceTree = "<group>";
+		};
+		52A62BAE2484917E00009465 /* Array */ = {
+			isa = PBXGroup;
+			children = (
+				52A62BAF248491A200009465 /* Sum.swift */,
+				52A62BB12484B5F800009465 /* FirstMissingPositive.swift */,
+			);
+			path = Array;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,14 +202,12 @@
 				8A933AEF2484001700D6B0F7 /* DeleteNode.swift in Sources */,
 				527F08EB247CAF8500668911 /* ReverseList.swift in Sources */,
 				5256E7452477A4FA0005CB62 /* main.swift in Sources */,
+				52A62BB0248491A200009465 /* Sum.swift in Sources */,
 				5256E7512477B83D0005CB62 /* BST.swift in Sources */,
-
-				524CAF372480A6010080144F /* RotateNodeList.swift in Sources */,
-
 				8A0848FD2482699B00D48112 /* RotateListNode.swift in Sources */,
-
 				527F08ED247CB00C00668911 /* ListNode.swift in Sources */,
 				8AA9B5B2247957B400ED5E5B /* Symmetric.swift in Sources */,
+				52A62BB22484B5F800009465 /* FirstMissingPositive.swift in Sources */,
 				5256E74D2477A5FE0005CB62 /* TreeNode.swift in Sources */,
 				52ADE1CD247FA77E00E82CEC /* MergeList.swift in Sources */,
 				8A933AED2483FBEB00D6B0F7 /* SortList.swift in Sources */,
