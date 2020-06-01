@@ -22,7 +22,15 @@ node4.next = node5
 
 //let res = reverseList(node1)
 //let node =   swapPairs(node1)
-let node = rotateRight(node1, 3)
+//successor = node1
+//
+var isNoNeed = false
+let node = reverseKGroup(node1, 3)
+
+//let node = reverseNGroup_new(node1, node1, 4, &isNoNeed)
+
+
+print("node===",node?.val)
 
 
 
