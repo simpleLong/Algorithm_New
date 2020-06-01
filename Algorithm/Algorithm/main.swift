@@ -21,7 +21,9 @@ node3.next = node4
 node4.next = node5
 
 //let res = reverseList(node1)
-let node =   swapPairs(node1)
+//let node =   swapPairs(node1)
+let node = rotateRight(node1, 3)
+
 
 
 
