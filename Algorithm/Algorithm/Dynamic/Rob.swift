@@ -40,7 +40,7 @@ import Foundation
  
  */
 func rob(_ root: TreeNode?) -> Int {
-     //MARK: 递归解法效率低
+     //MARK: 递归解法(效率低)
 //    guard let root = root else {
 //        return 0
 //    }
@@ -62,7 +62,7 @@ func rob(_ root: TreeNode?) -> Int {
 
 func robInternal(root : TreeNode?) -> (Int ,Int) {
 
-    var res = (0,0)
+    var res = (0,0)//(.0代表不偷,.1代表的是偷)
     
     guard let root = root else {
         return res
