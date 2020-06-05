@@ -24,6 +24,7 @@
 		52ADE1CF247FC03D00E82CEC /* SwapPairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ADE1CE247FC03D00E82CEC /* SwapPairs.swift */; };
 		52BAB8A52489E27E005F47AC /* MonotonicStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB8A42489E27E005F47AC /* MonotonicStack.swift */; };
 		52BAB8A8248A4DCE005F47AC /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB8A7248A4DCE005F47AC /* Heap.swift */; };
+		52BAB8AA248A6F79005F47AC /* TopK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB8A9248A6F79005F47AC /* TopK.swift */; };
 		8A0848FD2482699B00D48112 /* RotateListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0848FC2482699B00D48112 /* RotateListNode.swift */; };
 		8A933AED2483FBEB00D6B0F7 /* SortList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A933AEC2483FBEB00D6B0F7 /* SortList.swift */; };
 		8A933AEF2484001700D6B0F7 /* DeleteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A933AEE2484001700D6B0F7 /* DeleteNode.swift */; };
@@ -62,6 +63,7 @@
 		52ADE1CE247FC03D00E82CEC /* SwapPairs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapPairs.swift; sourceTree = "<group>"; };
 		52BAB8A42489E27E005F47AC /* MonotonicStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonotonicStack.swift; sourceTree = "<group>"; };
 		52BAB8A7248A4DCE005F47AC /* Heap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
+		52BAB8A9248A6F79005F47AC /* TopK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopK.swift; sourceTree = "<group>"; };
 		8A0848FC2482699B00D48112 /* RotateListNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateListNode.swift; sourceTree = "<group>"; };
 		8A933AEC2483FBEB00D6B0F7 /* SortList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortList.swift; sourceTree = "<group>"; };
 		8A933AEE2484001700D6B0F7 /* DeleteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNode.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				52BAB8A7248A4DCE005F47AC /* Heap.swift */,
+				52BAB8A9248A6F79005F47AC /* TopK.swift */,
 			);
 			path = Heap;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52BAB8AA248A6F79005F47AC /* TopK.swift in Sources */,
 				52ADE1CF247FC03D00E82CEC /* SwapPairs.swift in Sources */,
 				8A933AF12484087D00D6B0F7 /* GetIntersectionNode.swift in Sources */,
 				52BAB8A52489E27E005F47AC /* MonotonicStack.swift in Sources */,

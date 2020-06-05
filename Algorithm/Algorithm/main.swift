@@ -9,10 +9,11 @@
 import Foundation
 
 print("Hello, World!")
-var array = [4,2,0,3,2,5]
+var array = [3,2,1,5,6,4]
 
-let heap =  Heap.init(array: array, sort: >)
-print("heap====",heap.nodes)
+var heap =  findKthLargest(array, 2)
+print("heap====",heap)
+
 let node1  =  ListNode.init(1)
 let node2  =  ListNode.init(2)
 let node3  =  ListNode.init(3)
