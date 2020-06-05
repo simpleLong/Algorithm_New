@@ -22,6 +22,8 @@
 		52A62BB22484B5F800009465 /* FirstMissingPositive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A62BB12484B5F800009465 /* FirstMissingPositive.swift */; };
 		52ADE1CD247FA77E00E82CEC /* MergeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ADE1CC247FA77E00E82CEC /* MergeList.swift */; };
 		52ADE1CF247FC03D00E82CEC /* SwapPairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ADE1CE247FC03D00E82CEC /* SwapPairs.swift */; };
+		52BAB8A52489E27E005F47AC /* MonotonicStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB8A42489E27E005F47AC /* MonotonicStack.swift */; };
+		52BAB8A8248A4DCE005F47AC /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB8A7248A4DCE005F47AC /* Heap.swift */; };
 		8A0848FD2482699B00D48112 /* RotateListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0848FC2482699B00D48112 /* RotateListNode.swift */; };
 		8A933AED2483FBEB00D6B0F7 /* SortList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A933AEC2483FBEB00D6B0F7 /* SortList.swift */; };
 		8A933AEF2484001700D6B0F7 /* DeleteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A933AEE2484001700D6B0F7 /* DeleteNode.swift */; };
@@ -58,6 +60,8 @@
 		52A62BB12484B5F800009465 /* FirstMissingPositive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstMissingPositive.swift; sourceTree = "<group>"; };
 		52ADE1CC247FA77E00E82CEC /* MergeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeList.swift; sourceTree = "<group>"; };
 		52ADE1CE247FC03D00E82CEC /* SwapPairs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapPairs.swift; sourceTree = "<group>"; };
+		52BAB8A42489E27E005F47AC /* MonotonicStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonotonicStack.swift; sourceTree = "<group>"; };
+		52BAB8A7248A4DCE005F47AC /* Heap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
 		8A0848FC2482699B00D48112 /* RotateListNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateListNode.swift; sourceTree = "<group>"; };
 		8A933AEC2483FBEB00D6B0F7 /* SortList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortList.swift; sourceTree = "<group>"; };
 		8A933AEE2484001700D6B0F7 /* DeleteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNode.swift; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 		5256E7432477A4FA0005CB62 /* Algorithm */ = {
 			isa = PBXGroup;
 			children = (
+				52BAB8A6248A458A005F47AC /* Heap */,
+				52BAB8A32489E15A005F47AC /* Stack */,
 				52732A052489005200E7E766 /* DFS */,
 				52A62BAE2484917E00009465 /* Array */,
 				527F08E9247CAF5100668911 /* ListNode */,
@@ -159,6 +165,22 @@
 			path = Array;
 			sourceTree = "<group>";
 		};
+		52BAB8A32489E15A005F47AC /* Stack */ = {
+			isa = PBXGroup;
+			children = (
+				52BAB8A42489E27E005F47AC /* MonotonicStack.swift */,
+			);
+			path = Stack;
+			sourceTree = "<group>";
+		};
+		52BAB8A6248A458A005F47AC /* Heap */ = {
+			isa = PBXGroup;
+			children = (
+				52BAB8A7248A4DCE005F47AC /* Heap.swift */,
+			);
+			path = Heap;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -219,6 +241,7 @@
 			files = (
 				52ADE1CF247FC03D00E82CEC /* SwapPairs.swift in Sources */,
 				8A933AF12484087D00D6B0F7 /* GetIntersectionNode.swift in Sources */,
+				52BAB8A52489E27E005F47AC /* MonotonicStack.swift in Sources */,
 				52732A022488DA3900E7E766 /* ClimbingStairs.swift in Sources */,
 				8A933AEF2484001700D6B0F7 /* DeleteNode.swift in Sources */,
 				527F08EB247CAF8500668911 /* ReverseList.swift in Sources */,
@@ -237,6 +260,7 @@
 				5256E74F2477A6A00005CB62 /* TraversalTree.swift in Sources */,
 				52732A072489008200E7E766 /* Island.swift in Sources */,
 				52732A0024888BF600E7E766 /* Sorted.swift in Sources */,
+				52BAB8A8248A4DCE005F47AC /* Heap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

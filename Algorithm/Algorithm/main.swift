@@ -9,7 +9,10 @@
 import Foundation
 
 print("Hello, World!")
-sortArrayByParity([0,1])
+var array = [4,2,0,3,2,5]
+
+let heap =  Heap.init(array: array, sort: >)
+print("heap====",heap.nodes)
 let node1  =  ListNode.init(1)
 let node2  =  ListNode.init(2)
 let node3  =  ListNode.init(3)
