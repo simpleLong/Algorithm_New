@@ -20,6 +20,8 @@ import Foundation
  输入: -1->5->3->4->0
  输出: -1->0->3->4->5
  */
+
+ //MARK: 使用二分排序法
 func sortList(_ head: ListNode?) -> ListNode? {
     
     if head == nil || head?.next == nil {

@@ -9,7 +9,8 @@
 import Foundation
 
 print("Hello, World!")
-var array = [3,2,1,5,6,4]
+var array = [1,2,0]
+sortColors(&array)
 
 var heap =  findKthLargest(array, 2)
 print("heap====",heap)
