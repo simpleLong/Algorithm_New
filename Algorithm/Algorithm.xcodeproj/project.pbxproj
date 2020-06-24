@@ -12,6 +12,7 @@
 		5256E74D2477A5FE0005CB62 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5256E74C2477A5FD0005CB62 /* TreeNode.swift */; };
 		5256E74F2477A6A00005CB62 /* TraversalTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5256E74E2477A6A00005CB62 /* TraversalTree.swift */; };
 		5256E7512477B83D0005CB62 /* BST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5256E7502477B83D0005CB62 /* BST.swift */; };
+		5258E68324A3061500BD83B5 /* BuildTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258E68224A3061500BD83B5 /* BuildTree.swift */; };
 		52732A0024888BF600E7E766 /* Sorted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527329FF24888BF600E7E766 /* Sorted.swift */; };
 		52732A022488DA3900E7E766 /* ClimbingStairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52732A012488DA3900E7E766 /* ClimbingStairs.swift */; };
 		52732A042488E7CF00E7E766 /* Profit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52732A032488E7CF00E7E766 /* Profit.swift */; };
@@ -53,6 +54,7 @@
 		5256E74C2477A5FD0005CB62 /* TreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
 		5256E74E2477A6A00005CB62 /* TraversalTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraversalTree.swift; sourceTree = "<group>"; };
 		5256E7502477B83D0005CB62 /* BST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BST.swift; sourceTree = "<group>"; };
+		5258E68224A3061500BD83B5 /* BuildTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildTree.swift; sourceTree = "<group>"; };
 		527329FF24888BF600E7E766 /* Sorted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sorted.swift; sourceTree = "<group>"; };
 		52732A012488DA3900E7E766 /* ClimbingStairs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbingStairs.swift; sourceTree = "<group>"; };
 		52732A032488E7CF00E7E766 /* Profit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profit.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				5256E74E2477A6A00005CB62 /* TraversalTree.swift */,
 				5256E7502477B83D0005CB62 /* BST.swift */,
 				8AA9B5B1247957B400ED5E5B /* Symmetric.swift */,
+				5258E68224A3061500BD83B5 /* BuildTree.swift */,
 			);
 			path = BinaryTree;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				5256E7512477B83D0005CB62 /* BST.swift in Sources */,
 				8A0848FD2482699B00D48112 /* RotateListNode.swift in Sources */,
 				527F08ED247CB00C00668911 /* ListNode.swift in Sources */,
+				5258E68324A3061500BD83B5 /* BuildTree.swift in Sources */,
 				8AA9B5B2247957B400ED5E5B /* Symmetric.swift in Sources */,
 				52A62BB22484B5F800009465 /* FirstMissingPositive.swift in Sources */,
 				5256E74D2477A5FE0005CB62 /* TreeNode.swift in Sources */,
