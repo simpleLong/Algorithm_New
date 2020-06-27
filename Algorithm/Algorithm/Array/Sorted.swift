@@ -183,3 +183,101 @@ func sortArrayByParityII(_ A: [Int]) -> [Int] {
     }
     
 }
+/**
+ 852. 山脉数组的峰顶索引
+ 我们把符合下列属性的数组 A 称作山脉：
+
+ A.length >= 3
+ 存在 0 < i < A.length - 1 使得A[0] < A[1] < ... A[i-1] < A[i] > A[i+1] > ... > A[A.length - 1]
+ 给定一个确定为山脉的数组，返回任何满足 A[0] < A[1] < ... A[i-1] < A[i] > A[i+1] > ... > A[A.length - 1] 的 i 的值。
+
+  
+
+ 示例 1：
+
+ 输入：[0,1,0]
+ 输出：1
+ 示例 2：
+
+ 输入：[0,2,1,0]
+ 输出：1
+  
+
+ 提示：
+
+ 3 <= A.length <= 10000
+ 0 <= A[i] <= 10^6
+ A 是如上定义的山脉
+ 
+ */
+// MARK: -二分法
+public  func peakIndexInMountainArray(_ A: [Int]) -> Int {
+    
+    var l  = 0 ,r = A.count - 1 ,m = 0
+    while l < r  {
+        m = l + (r-l)/2
+        if A[m] < A[m+1] {
+            l = m+1
+        }else{
+            r = m
+        }
+        
+    }
+    
+    return l
+}
+/**
+ 编写一个高效的算法来判断 m x n 矩阵中，是否存在一个目标值。该矩阵具有如下特性：
+
+ 每行中的整数从左到右按升序排列。
+ 每行的第一个整数大于前一行的最后一个整数。
+ 示例 1:
+
+ 输入:
+ matrix = [
+   [1,   3,  5,  7],
+   [10, 11, 16, 20],
+   [23, 30, 34, 50]
+ ]
+ target = 3
+ 输出: true
+ 示例 2:
+
+ 输入:
+ matrix = [
+   [1,   3,  5,  7],
+   [10, 11, 16, 20],
+   [23, 30, 34, 50]
+ ]
+ target = 13
+ 输出: false
+ 
+ */
+func searchMatrix(_ matrix: [[Int]], _ target: Int) -> Bool {
+    
+    let m = matrix.count
+    if m == 0 {
+        return false
+    }
+    let n  = matrix[0].count
+    if n == 0 {
+        return false
+    }
+    
+    var left = 0 ,right = m * n - 1 ,pivotidx = 0 ,pivotElement = 0
+    while left <= right {
+        pivotidx = left + (right - left)/2
+        pivotElement = matrix[pivotidx / n][pivotidx % n]
+        if pivotElement == target {
+            return true
+        }else {
+            if target < pivotElement {
+                right = pivotidx - 1
+            }else{
+                left = pivotidx + 1
+            }
+        }
+    }
+
+    return false
+}

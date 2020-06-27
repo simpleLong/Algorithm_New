@@ -26,6 +26,12 @@
 		52BAB8A8248A4DCE005F47AC /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB8A7248A4DCE005F47AC /* Heap.swift */; };
 		52BAB8AA248A6F79005F47AC /* TopK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB8A9248A6F79005F47AC /* TopK.swift */; };
 		8A0848FD2482699B00D48112 /* RotateListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0848FC2482699B00D48112 /* RotateListNode.swift */; };
+		8A6D1DD324A39BBD004FAD84 /* Remove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6D1DD224A39BBD004FAD84 /* Remove.swift */; };
+		8A727B2924A418E6007C49AE /* Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A727B2824A418E6007C49AE /* Merge.swift */; };
+		8A727B2B24A5DC7D007C49AE /* Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A727B2A24A5DC7D007C49AE /* Rotate.swift */; };
+		8A727B2E24A7815B007C49AE /* Anagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A727B2D24A7815B007C49AE /* Anagram.swift */; };
+		8A727B3024A78E68007C49AE /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A727B2F24A78E68007C49AE /* Set.swift */; };
+		8A727B3224A79010007C49AE /* ProductExceptSelf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A727B3124A79010007C49AE /* ProductExceptSelf.swift */; };
 		8A933AED2483FBEB00D6B0F7 /* SortList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A933AEC2483FBEB00D6B0F7 /* SortList.swift */; };
 		8A933AEF2484001700D6B0F7 /* DeleteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A933AEE2484001700D6B0F7 /* DeleteNode.swift */; };
 		8A933AF12484087D00D6B0F7 /* GetIntersectionNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A933AF02484087D00D6B0F7 /* GetIntersectionNode.swift */; };
@@ -65,6 +71,12 @@
 		52BAB8A7248A4DCE005F47AC /* Heap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
 		52BAB8A9248A6F79005F47AC /* TopK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopK.swift; sourceTree = "<group>"; };
 		8A0848FC2482699B00D48112 /* RotateListNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateListNode.swift; sourceTree = "<group>"; };
+		8A6D1DD224A39BBD004FAD84 /* Remove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Remove.swift; sourceTree = "<group>"; };
+		8A727B2824A418E6007C49AE /* Merge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Merge.swift; sourceTree = "<group>"; };
+		8A727B2A24A5DC7D007C49AE /* Rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotate.swift; sourceTree = "<group>"; };
+		8A727B2D24A7815B007C49AE /* Anagram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anagram.swift; sourceTree = "<group>"; };
+		8A727B2F24A78E68007C49AE /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
+		8A727B3124A79010007C49AE /* ProductExceptSelf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductExceptSelf.swift; sourceTree = "<group>"; };
 		8A933AEC2483FBEB00D6B0F7 /* SortList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortList.swift; sourceTree = "<group>"; };
 		8A933AEE2484001700D6B0F7 /* DeleteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNode.swift; sourceTree = "<group>"; };
 		8A933AF02484087D00D6B0F7 /* GetIntersectionNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIntersectionNode.swift; sourceTree = "<group>"; };
@@ -101,6 +113,7 @@
 		5256E7432477A4FA0005CB62 /* Algorithm */ = {
 			isa = PBXGroup;
 			children = (
+				8A727B2C24A763C8007C49AE /* HashMap */,
 				52BAB8A6248A458A005F47AC /* Heap */,
 				52BAB8A32489E15A005F47AC /* Stack */,
 				52732A052489005200E7E766 /* DFS */,
@@ -163,6 +176,10 @@
 				52A62BAF248491A200009465 /* Sum.swift */,
 				52A62BB12484B5F800009465 /* FirstMissingPositive.swift */,
 				527329FF24888BF600E7E766 /* Sorted.swift */,
+				8A6D1DD224A39BBD004FAD84 /* Remove.swift */,
+				8A727B2824A418E6007C49AE /* Merge.swift */,
+				8A727B2A24A5DC7D007C49AE /* Rotate.swift */,
+				8A727B2F24A78E68007C49AE /* Set.swift */,
 			);
 			path = Array;
 			sourceTree = "<group>";
@@ -182,6 +199,15 @@
 				52BAB8A9248A6F79005F47AC /* TopK.swift */,
 			);
 			path = Heap;
+			sourceTree = "<group>";
+		};
+		8A727B2C24A763C8007C49AE /* HashMap */ = {
+			isa = PBXGroup;
+			children = (
+				8A727B2D24A7815B007C49AE /* Anagram.swift */,
+				8A727B3124A79010007C49AE /* ProductExceptSelf.swift */,
+			);
+			path = HashMap;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52BAB8AA248A6F79005F47AC /* TopK.swift in Sources */,
+				8A727B3224A79010007C49AE /* ProductExceptSelf.swift in Sources */,
 				52ADE1CF247FC03D00E82CEC /* SwapPairs.swift in Sources */,
 				8A933AF12484087D00D6B0F7 /* GetIntersectionNode.swift in Sources */,
 				52BAB8A52489E27E005F47AC /* MonotonicStack.swift in Sources */,
@@ -254,8 +281,11 @@
 				52A62BB0248491A200009465 /* Sum.swift in Sources */,
 				5256E7512477B83D0005CB62 /* BST.swift in Sources */,
 				8A0848FD2482699B00D48112 /* RotateListNode.swift in Sources */,
+				8A727B2E24A7815B007C49AE /* Anagram.swift in Sources */,
 				527F08ED247CB00C00668911 /* ListNode.swift in Sources */,
+				8A6D1DD324A39BBD004FAD84 /* Remove.swift in Sources */,
 				8AA9B5B2247957B400ED5E5B /* Symmetric.swift in Sources */,
+				8A727B2924A418E6007C49AE /* Merge.swift in Sources */,
 				52A62BB22484B5F800009465 /* FirstMissingPositive.swift in Sources */,
 				5256E74D2477A5FE0005CB62 /* TreeNode.swift in Sources */,
 				52ADE1CD247FA77E00E82CEC /* MergeList.swift in Sources */,
@@ -263,7 +293,9 @@
 				529D786E247BC5BE00EB7300 /* Rob.swift in Sources */,
 				5256E74F2477A6A00005CB62 /* TraversalTree.swift in Sources */,
 				52732A072489008200E7E766 /* Island.swift in Sources */,
+				8A727B3024A78E68007C49AE /* Set.swift in Sources */,
 				52732A0024888BF600E7E766 /* Sorted.swift in Sources */,
+				8A727B2B24A5DC7D007C49AE /* Rotate.swift in Sources */,
 				52BAB8A8248A4DCE005F47AC /* Heap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
