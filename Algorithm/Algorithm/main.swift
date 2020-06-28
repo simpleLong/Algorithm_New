@@ -8,9 +8,37 @@
 
 import Foundation
 
+let  array = [1,2,3,4]
+productExceptSelf(array)
+
+
+
+
+
+class A : NSObject {
+    public var name  = ""
+    override init() {
+        
+    }
+    init(name:String) {
+        self.name = name
+    }
+    
+}
+var block2: (() -> ())?
+if true {
+var a: A? = A()
+block2 = {
+[a] in
+print(a?.name)
+}
+a = A(name: "new name")
+}
+block2?() //结果是："Optional("old name")"
+
+
 print("Hello, World!")
-var array = [1,2,0]
-sortColors(&array)
+
 
 var heap =  findKthLargest(array, 2)
 print("heap====",heap)

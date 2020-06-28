@@ -184,129 +184,100 @@ func sortArrayByParityII(_ A: [Int]) -> [Int] {
     
 }
 /**
- 75. 颜色分类
- 给定一个包含红色、白色和蓝色，一共 n 个元素的数组，原地对它们进行排序，使得相同颜色的元素相邻，并按照红色、白色、蓝色顺序排列。
+ 852. 山脉数组的峰顶索引
+ 我们把符合下列属性的数组 A 称作山脉：
 
- 此题中，我们使用整数 0、 1 和 2 分别表示红色、白色和蓝色。
-
- 注意:
- 不能使用代码库中的排序函数来解决这道题。
-
- 示例:
-
- 输入: [2,0,2,1,1,0]
- 输出: [0,0,1,1,2,2]
- 进阶：
-
- 一个直观的解决方案是使用计数排序的两趟扫描算法。
- 首先，迭代计算出0、1 和 2 元素的个数，然后按照0、1、2的排序，重写当前数组。
- 你能想出一个仅使用常数空间的一趟扫描算法吗？
- */
-public func sortColors(_ nums: inout [Int]) {
-    
-    var p2 = nums.count-1 ,p0 = 0,curr = 0
-
-    while curr <= p2 {
-        if nums[curr] == 1 {
-            curr += 1
-        }else if nums[curr] == 2 {
-            (nums[curr],nums[p2]) = (nums[p2],nums[curr])
-
-            p2 -= 1
-        }else if nums[curr] == 0 {
-            (nums[curr],nums[p0]) = (nums[p0],nums[curr])
-            curr += 1
-            p0 += 1
-        }
-    }
-
-}
-/**
- 220. 存在重复元素 III
- 在整数数组 nums 中，是否存在两个下标 i 和 j，使得 nums [i] 和 nums [j] 的差的绝对值小于等于 t ，且满足 i 和 j 的差的绝对值也小于等于 ķ 。
-
- 如果存在则返回 true，不存在返回 false。
+ A.length >= 3
+ 存在 0 < i < A.length - 1 使得A[0] < A[1] < ... A[i-1] < A[i] > A[i+1] > ... > A[A.length - 1]
+ 给定一个确定为山脉的数组，返回任何满足 A[0] < A[1] < ... A[i-1] < A[i] > A[i+1] > ... > A[A.length - 1] 的 i 的值。
 
   
 
- 示例 1:
+ 示例 1：
 
- 输入: nums = [1,2,3,1], k = 3, t = 0
- 输出: true
- 示例 2:
+ 输入：[0,1,0]
+ 输出：1
+ 示例 2：
 
- 输入: nums = [1,0,1,1], k = 1, t = 2
- 输出: true
- 示例 3:
+ 输入：[0,2,1,0]
+ 输出：1
+  
 
- 输入: nums = [1,5,9,1,5,9], k = 2, t = 3
- 输出: false
+ 提示：
+
+ 3 <= A.length <= 10000
+ 0 <= A[i] <= 10^6
+ A 是如上定义的山脉
+ 
  */
-func containsNearbyAlmostDuplicate(_ nums: [Int], _ k: Int, _ t: Int) -> Bool {
-
-    var set:Set<Int> = []
+// MARK: -二分法
+public  func peakIndexInMountainArray(_ A: [Int]) -> Int {
     
-    for (index ,value) in nums.enumerated() {
-        if t == 0 {
-            if set.contains(value) {
-                return true
-            }
-        }else {
-            if set.contains(where: {abs($0 - value) <= t}) {
-                return true
-            }
+    var l  = 0 ,r = A.count - 1 ,m = 0
+    while l < r  {
+        m = l + (r-l)/2
+        if A[m] < A[m+1] {
+            l = m+1
+        }else{
+            r = m
         }
-        set.insert(value)
-        if index >= k {
-            set.remove(nums[index-k])
-        }
+        
     }
-    return false
+    
+    return l
 }
 /**
- 242. 有效的字母异位词
- 给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。
+ 编写一个高效的算法来判断 m x n 矩阵中，是否存在一个目标值。该矩阵具有如下特性：
 
- 示例 1:
+ 每行中的整数从左到右按升序排列。
+ 每行的第一个整数大于前一行的最后一个整数。
+ 示例 1:
 
- 输入: s = "anagram", t = "nagaram"
+ 输入:
+ matrix = [
+   [1,   3,  5,  7],
+   [10, 11, 16, 20],
+   [23, 30, 34, 50]
+ ]
+ target = 3
  输出: true
- 示例 2:
+ 示例 2:
 
- 输入: s = "rat", t = "car"
+ 输入:
+ matrix = [
+   [1,   3,  5,  7],
+   [10, 11, 16, 20],
+   [23, 30, 34, 50]
+ ]
+ target = 13
  输出: false
- 说明:
- 你可以假设字符串只包含小写字母。
-
- 进阶:
- 如果输入字符串包含 unicode 字符怎么办？你能否调整你的解法来应对这种情况？
+ 
  */
-   func isAnagram(_ s: String, _ t: String) -> Bool {
-
-    if s.count != t.count {
+func searchMatrix(_ matrix: [[Int]], _ target: Int) -> Bool {
+    
+    let m = matrix.count
+    if m == 0 {
         return false
     }
-    var array = [Int](repeating: 0, count: 26)
-    let tArray = Array(t)
-    for (i,value) in s.enumerated() {
-        array[Int(value.asciiValue!)-97] += 1
-        array[Int(tArray[i].asciiValue!)-97] -= 1
+    let n  = matrix[0].count
+    if n == 0 {
+        return false
     }
     
-    
-      return array == [Int](repeating: 0, count: 26)
-   }
-/**
- 315. 计算右侧小于当前元素的个数
- 给定一个整数数组 nums，按要求返回一个新数组 counts。数组 counts 有该性质： counts[i] 的值是  nums[i] 右侧小于 nums[i] 的元素的数量。
+    var left = 0 ,right = m * n - 1 ,pivotidx = 0 ,pivotElement = 0
+    while left <= right {
+        pivotidx = left + (right - left)/2
+        pivotElement = matrix[pivotidx / n][pivotidx % n]
+        if pivotElement == target {
+            return true
+        }else {
+            if target < pivotElement {
+                right = pivotidx - 1
+            }else{
+                left = pivotidx + 1
+            }
+        }
+    }
 
- 示例:
-
- 输入: [5,2,6,1]
- 输出: [2,1,1,0]
- 解释:
- 5 的右侧有 2 个更小的元素 (2 和 1).
- 2 的右侧仅有 1 个更小的元素 (1).
- 6 的右侧有 1 个更小的元素 (1).
- 1 的右侧有 0 个更小的元素.
- */
+    return false
+}
