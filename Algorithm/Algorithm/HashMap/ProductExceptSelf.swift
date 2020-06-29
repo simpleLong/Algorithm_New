@@ -26,10 +26,18 @@ import Foundation
  */
 public  func productExceptSelf(_ nums: [Int]) -> [Int] {
     var res = [Int].init(repeating: 0, count: nums.count)
-    let sum =  nums.reduce(1) { (int1, int2) -> Int in
-        
-        return (int1 == 0 ? 1 : int1) *  (int2 == 0 ? 1 : int2)
+    var sum = 1
+    
+
+    var  i  = 0
+    var count = 0
+    for i  in 0..<nums.count {
+        if nums.count == 1 {
+            <#code#>
+        }
     }
+    
+    
 
     
     for (index ,value) in nums.enumerated() {
@@ -38,4 +46,36 @@ public  func productExceptSelf(_ nums: [Int]) -> [Int] {
 
     
     return res
+}
+class MinStack {
+
+    var datastack = [Int]()
+    var helperStack = [Int]()
+    
+    /** initialize your data structure here. */
+    init() {
+        
+    }
+    
+    func push(_ x: Int) {
+        datastack.append(x)
+        if helperStack.isEmpty || helperStack.last! >=  x {
+            helperStack.append(x)
+        }else{
+            helperStack.append(helperStack.last!)
+        }
+    }
+    
+    func pop() {
+        _ = datastack.popLast()
+        _ = helperStack.popLast()
+    }
+    
+    func top() -> Int {
+        return datastack.last!
+    }
+    
+    func getMin() -> Int {
+        return helperStack.last!
+    }
 }
