@@ -33,7 +33,7 @@ public  func productExceptSelf(_ nums: [Int]) -> [Int] {
     var count = 0
     for i  in 0..<nums.count {
         if nums.count == 1 {
-            <#code#>
+            
         }
     }
     
