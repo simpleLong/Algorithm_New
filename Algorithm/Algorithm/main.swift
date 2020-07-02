@@ -11,7 +11,8 @@ import Foundation
 let  array = [1,2,3,4]
 productExceptSelf(array)
 
-
+let numbers = [ 10, -1, 3, 9, 2, 27, 8, 5, 1, 3, 0, 26 ]
+ var list = insertionSort(numbers, <)
 
 
 
