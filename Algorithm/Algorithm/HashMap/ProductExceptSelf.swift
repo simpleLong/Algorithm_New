@@ -26,16 +26,15 @@ import Foundation
  */
 public  func productExceptSelf(_ nums: [Int]) -> [Int] {
     var res = [Int].init(repeating: 0, count: nums.count)
-    let sum =  nums.reduce(1) { (int1, int2) -> Int in
-        
-        return (int1 == 0 ? 1 : int1) *  (int2 == 0 ? 1 : int2)
+    var k = 1
+    for i  in 0..<res.count {
+        res[i] = k
+        k = k*nums[i]
     }
-
-    
-    for (index ,value) in nums.enumerated() {
-        res[index] = sum/(value == 0 ? 1 : value)
+    k = 1
+    for i  in (0..<res.count).reversed() {
+        res[i] *= k
+        k *= nums[i]
     }
-
-    
     return res
 }
