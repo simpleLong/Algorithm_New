@@ -15,6 +15,7 @@
 		52732A022488DA3900E7E766 /* ClimbingStairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52732A012488DA3900E7E766 /* ClimbingStairs.swift */; };
 		52732A042488E7CF00E7E766 /* Profit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52732A032488E7CF00E7E766 /* Profit.swift */; };
 		52732A072489008200E7E766 /* Island.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52732A062489008200E7E766 /* Island.swift */; };
+		527970EF24AC319200726A30 /* Greedy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527970EE24AC319200726A30 /* Greedy.swift */; };
 		527F08EB247CAF8500668911 /* ReverseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527F08EA247CAF8500668911 /* ReverseList.swift */; };
 		527F08ED247CB00C00668911 /* ListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527F08EC247CB00C00668911 /* ListNode.swift */; };
 		529B3CBC24AAE5800009344E /* Valid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B3CBB24AAE5800009344E /* Valid.swift */; };
@@ -62,6 +63,7 @@
 		52732A012488DA3900E7E766 /* ClimbingStairs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbingStairs.swift; sourceTree = "<group>"; };
 		52732A032488E7CF00E7E766 /* Profit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profit.swift; sourceTree = "<group>"; };
 		52732A062489008200E7E766 /* Island.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Island.swift; sourceTree = "<group>"; };
+		527970EE24AC319200726A30 /* Greedy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greedy.swift; sourceTree = "<group>"; };
 		527F08EA247CAF8500668911 /* ReverseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseList.swift; sourceTree = "<group>"; };
 		527F08EC247CB00C00668911 /* ListNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNode.swift; sourceTree = "<group>"; };
 		529B3CBB24AAE5800009344E /* Valid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Valid.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		5256E7432477A4FA0005CB62 /* Algorithm */ = {
 			isa = PBXGroup;
 			children = (
+				527970ED24AC30FC00726A30 /* Greedy */,
 				529B3CBD24AB1ACB0009344E /* SortingAlgorithm */,
 				8A727B2C24A763C8007C49AE /* HashMap */,
 				52BAB8A6248A458A005F47AC /* Heap */,
@@ -148,6 +151,14 @@
 				52732A062489008200E7E766 /* Island.swift */,
 			);
 			path = DFS;
+			sourceTree = "<group>";
+		};
+		527970ED24AC30FC00726A30 /* Greedy */ = {
+			isa = PBXGroup;
+			children = (
+				527970EE24AC319200726A30 /* Greedy.swift */,
+			);
+			path = Greedy;
 			sourceTree = "<group>";
 		};
 		527F08E9247CAF5100668911 /* ListNode */ = {
@@ -289,6 +300,7 @@
 				52BAB8A52489E27E005F47AC /* MonotonicStack.swift in Sources */,
 				52732A022488DA3900E7E766 /* ClimbingStairs.swift in Sources */,
 				529B3CBF24AB1B470009344E /* SortingAlgorithm.swift in Sources */,
+				527970EF24AC319200726A30 /* Greedy.swift in Sources */,
 				8A933AEF2484001700D6B0F7 /* DeleteNode.swift in Sources */,
 				527F08EB247CAF8500668911 /* ReverseList.swift in Sources */,
 				52732A042488E7CF00E7E766 /* Profit.swift in Sources */,
