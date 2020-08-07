@@ -8,11 +8,14 @@
 
 import Foundation
 
-let  array = [1,2,3,4]
-productExceptSelf(array)
+var  array = [1,2,3,4,5,6,7]
+let k = 3
+let list =   rotate(&array, 3)
+
+
 
 let numbers = [ 10, -1, 3, 9, 2, 27, 8, 5, 1, 3, 0, 26 ]
- var list = insertionSort(numbers, <)
+
 
 
 
