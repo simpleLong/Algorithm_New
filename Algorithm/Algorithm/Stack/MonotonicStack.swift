@@ -16,18 +16,21 @@ import Foundation
 
  提示：气温 列表长度的范围是 [1, 30000]。每个气温的值的均为华氏度，都是在 [30, 100] 范围内的整数。
  */
+
+ //MARK: 用单调栈的思路去解决
 public func dailyTemperatures(_ T: [Int]) -> [Int] {
+
     var stack = [Int]()
     var res = [Int].init(repeating: 0, count: T.count)
-    
     for (index ,value) in T.enumerated() {
-        while  let last = stack.last , value > T[last] {
-            res[last] = index - last
-           _ = stack.popLast()
+        while let last = stack.last ,value > T[last] {
+            res[last] = value-last
+            _ = stack.popLast()
         }
         stack.append(index)
     }
     return res
+    
 }
 /**
  42. 接雨水
@@ -45,56 +48,56 @@ public func dailyTemperatures(_ T: [Int]) -> [Int] {
  
  https://leetcode-cn.com/problems/trapping-rain-water/
  */
- //MARK: 用栈的方法解决
+ //MARK: 用单调栈的方法解决
+func trap(_ height: [Int]) -> Int {
+    var area = 0
+    var stack = [Int]()//单调栈的顺序从大到小,如果后面进来的比前面大,则将前面的pop出去
+    for (index ,value) in height.enumerated() {
+
+
+        while let last = stack.last , value > height[last] {
+            let h = height[stack.popLast()!]
+            if stack.isEmpty {//必须前后有落差才能有积水
+                break
+            }
+            let minheight = min(height[stack.last!], value)//以两根柱子中小的那一根为准
+            area += (minheight-h)*(index-stack.last!-1)
+
+
+        }
+
+        stack.append(index)
+    }
+
+
+    return area
+}
+ //MARK: 用双指针的方法
 //func trap(_ height: [Int]) -> Int {
+//
+//    if height.isEmpty {
+//        return 0
+//    }
+//    var left = 0
+//    var right = height.count-1
+//    var left_max = height[0]
+//    var right_max = height[height.count-1]
 //    var area = 0
-//    var stack = [Int]()
-//    for (index ,value) in height.enumerated() {
-//
-//
-//        while let last = stack.last , value > height[last] {
-//            let h = height[stack.popLast()!]
-//            if stack.isEmpty {
-//                break
-//            }
-//            let minheight = min(height[stack.last!], value)
-//            area += (minheight-h)*(index-stack.last!-1)
-//
+//    while left <= right {
+//        left_max = max(height[left], left_max)
+//        right_max = max(height[right], right_max)
+//        if left_max < right_max {
+//            area += left_max-height[left]
+//            left += 1
+//        }else{
+//            area += right_max-height[right]
+//            right -= 1
 //
 //        }
-//
-//        stack.append(index)
 //    }
-//
 //
 //    return area
 //}
- //MARK: 用双指针的方法
-func trap(_ height: [Int]) -> Int {
-
-    if height.isEmpty {
-        return 0
-    }
-    var left = 0
-    var right = height.count-1
-    var left_max = height[0]
-    var right_max = height[height.count-1]
-    var area = 0
-    while left <= right {
-        left_max = max(height[left], left_max)
-        right_max = max(height[right], right_max)
-        if left_max < right_max {
-            area += left_max-height[left]
-            left += 1
-        }else{
-            area += right_max-height[right]
-            right -= 1
-            
-        }
-    }
-    
-    return area
-}
 /**
 https://leetcode-cn.com/problems/largest-rectangle-in-histogram/
  */
