@@ -8,67 +8,84 @@
 
 import Foundation
 
-var  array = [1,2,3,4,5,6,7]
-let k = 3
-let list =   rotate(&array, 3)
 
 
+var successor : ListNode?
 
-let numbers = [ 10, -1, 3, 9, 2, 27, 8, 5, 1, 3, 0, 26 ]
-
-
-
-
-class A : NSObject {
-    public var name  = ""
-    override init() {
-        
+func reverNList(head: ListNode? ,n :Int) -> ListNode? {
+    if n == 1 || head?.next == nil {
+        successor = head?.next
+        return head
     }
-    init(name:String) {
-        self.name = name
-    }
+    let last = reverNList(head: head?.next, n: n-1)
+    head?.next?.next = head
+    head?.next = successor
+    
+    return last
     
 }
-var block2: (() -> ())?
-if true {
-var a: A? = A()
-block2 = {
-[a] in
-print(a?.name)
+func reverseKGroup(_ head: ListNode?, _ k: Int) -> ListNode? {
+
+    
+    if head?.next == nil {
+        return head
+    }
+
+    
+    var successor  = head
+    var isNeedReverse = true
+    
+    for i in 0..<k {
+        if i == k-1  {
+            if successor == nil {
+                isNeedReverse = false
+            }
+        }
+        successor = successor?.next
+    }
+    if isNeedReverse == false {
+        return head
+    }
+    let last = reverseKGroup(successor, k)
+    
+    let startNode = reverNList(head: head, n: k)
+    head?.next = last
+    
+    return startNode
+
+
 }
-a = A(name: "new name")
-}
-block2?() //结果是："Optional("old name")"
-
-
-print("Hello, World!")
-
-
-var heap =  findKthLargest(array, 2)
-print("heap====",heap)
-
 let node1  =  ListNode.init(1)
 let node2  =  ListNode.init(2)
 let node3  =  ListNode.init(3)
 let node4  =  ListNode.init(4)
 let node5  =  ListNode.init(5)
+//let node6  =  ListNode.init(6)
+//let node7  =  ListNode.init(7)
 
 node1.next = node2
 node2.next = node3
 node3.next = node4
 node4.next = node5
+//node5.next = node6
+//node6.next = node7
+
+let result =   reverseKGroup(node1, 3)  //reverNList(head: node1, n: 5)   //reverseKGroup(node1, 3)
+print(result)
+
 
 //let res = reverseList(node1)
 //let node =   swapPairs(node1)
 //successor = node1
 //
-var isNoNeed = false
-let node = reverseKGroup(node1, 3)
+//var isNoNeed = false
+//let node = reverseKGroup(node1, 3)
+//let node = reverseNeighborList(head: node1)
 
 //let node = reverseNGroup_new(node1, node1, 4, &isNoNeed)
 
 
-print("node===",node?.val)
+//print("node===",node?.val)
 
 
 

@@ -7,7 +7,8 @@
 //
 
 import Cocoa
- //MARK: 计数排序
+
+//MARK: 计数排序
 
 func countSort(array: inout [Int], maxValue: Int) -> [Int] {
     
@@ -28,7 +29,7 @@ func countSort(array: inout [Int], maxValue: Int) -> [Int] {
     return sortedArray
     
 }
- //MARK: 插入排序
+//MARK: 插入排序
 
 public  func insertionSort<T>(_ array: [T] , _ isorderedBefore: ((T ,T) -> Bool)) -> [T] {
     var a = array
@@ -41,18 +42,18 @@ public  func insertionSort<T>(_ array: [T] , _ isorderedBefore: ((T ,T) -> Bool)
             j -= 1
         }
         a[j] = temp
-  
+        
     }
     return a
     
 }
- //MARK: 选择排序
+//MARK: 选择排序
 func  selectionSort<T: Comparable>(_ array: [T], _ isOrderedBefore: (T, T) -> Bool) -> [T] {
     if array.count <= 1 {
         return array
     }
     var array = array
-
+    
     for i  in 0..<array.count {
         var minIndex = i
         
@@ -62,11 +63,70 @@ func  selectionSort<T: Comparable>(_ array: [T], _ isOrderedBefore: (T, T) -> Bo
             }
         }
         if i != minIndex {
-             array.swapAt(i, minIndex)
+            array.swapAt(i, minIndex)
         }
-       
+        
     }
     
     return array
-
+    
 }
+// MARK: -希尔排序
+//func inserSort(_ list: inout [Int] ,start) -> <#return type#> {
+//    <#function body#>
+//}
+//
+//
+//func shellSort(_ list: inout [Int]) -> [Int] {
+//    var gap = list.count/2
+//
+//    while gap > 0 {
+//        <#code#>
+//    }
+//
+//
+//
+//
+//    return list
+//
+//}
+public func insertSort(_ list: inout[Int], start: Int, gap: Int) {
+    for i in stride(from: (start + gap), to: list.count, by: gap) {
+        let currentValue = list[i]
+        var pos = i
+        while pos >= gap && list[pos - gap] > currentValue {
+            list[pos] = list[pos - gap]
+            pos -= gap
+        }
+        list[pos] = currentValue
+    }
+}
+
+//func insertSort2<T: Comparable>(_ list : inout [T],start: Int,gap: Int ,_ isOrderedBefore: (T, T) -> Bool){
+//
+//    for i in stride(from: gap+start, to: list.count, by: gap) {
+//
+//        let currentValue = list[i]
+//        var j = i
+//
+//
+//
+//        while j > start && isOrderedBefore(currentValue,list[j]) {
+//            list[j] =
+//        }
+//    }
+//}
+
+public func shellSort(_ list: inout [Int]) {
+    var sublistCount = list.count / 2
+    while sublistCount > 0 {
+        for pos in 0..<sublistCount {
+
+            insertSort(&list, start: pos, gap: sublistCount)
+        }
+        sublistCount = sublistCount / 2
+    }
+    print("list=====",list)
+}
+
+

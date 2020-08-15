@@ -38,14 +38,16 @@ import Foundation
 //MARK: 递归方式
 public  func reverseList(_ head: ListNode?) -> ListNode? {
     
+
     if head?.next == nil {
         return head
     }
-    let p  = reverseList(head?.next)
+    let result = reverseList(head?.next)
+    
     head?.next?.next = head
     head?.next = nil
     
-    return p
+    return result
     
 }
 /**
@@ -61,6 +63,7 @@ public  func reverseList(_ head: ListNode?) -> ListNode? {
  输出: 1->4->3->2->5->NULL
  */
 func reverseBetween(_ head: ListNode?, _ m: Int, _ n: Int) -> ListNode? {
+
     if m == 1 {
         return reverseNList(head, n)
     }
@@ -68,20 +71,22 @@ func reverseBetween(_ head: ListNode?, _ m: Int, _ n: Int) -> ListNode? {
     return head
 }
 
-var successor : ListNode?
+//var successor : ListNode?
 
+// MARK: -反转前N个节点的链表
 func reverseNList(_ head: ListNode? , _ n : Int) -> ListNode? {
     if n == 1 {
         successor = head?.next
         
         return head
     }
-    
+
     let last = reverseNList(head?.next, n-1)
-    
     head?.next?.next = head
     head?.next = successor
     return last
+    
+    
     
     
 }
@@ -116,49 +121,87 @@ func reverseNList(_ head: ListNode? , _ n : Int) -> ListNode? {
 
 var lastHead :ListNode?
 
-public  func reverseKGroup(_ head: ListNode?, _ k: Int) -> ListNode? {
-    
-    
-    let dummyHead = ListNode.init(0)
-    dummyHead.next = head
-    
-    var pre : ListNode? = dummyHead
-    var end : ListNode? = dummyHead
-    var first = head
-    
-    for _ in 0..<k {
-        end =  end?.next
-    }
-    
-    while end != nil {
-        let next = end?.next
-        end?.next = nil
-        pre?.next = reverseList(first)
-        first?.next = next
-        
-        pre = first
-        end = first
-        first = next//pre?.next
-        
-        for _ in 0..<k {
-            end = end?.next
-        }
-        
-        
-    }
-
-    return dummyHead.next
-}
+//public  func reverseKGroup(_ head: ListNode?, _ k: Int) -> ListNode? {
+//
+//
+//    let dummyHead = ListNode.init(0)
+//    dummyHead.next = head
+//
+//    var pre : ListNode? = dummyHead
+//    var end : ListNode? = dummyHead
+//    var first = head
+//
+//    for _ in 0..<k {
+//        end =  end?.next
+//    }
+//
+//    while end != nil {
+//        let next = end?.next
+//        end?.next = nil
+//        pre?.next = reverseList(first)
+//        first?.next = next
+//
+//        pre = first
+//        end = first
+//        first = next//pre?.next
+//
+//        for _ in 0..<k {
+//            end = end?.next
+//        }
+//
+//
+//    }
+//
+//    return dummyHead.next
+//}
 
 func reverseList(head: ListNode?) -> ListNode? {
+
+    var pre :ListNode?
     var cur = head
-    var pre: ListNode? = nil
     
     while cur != nil {
         let next = cur?.next
-        (cur!.next ,pre , cur) = (pre ,cur ,next)
         
+        cur?.next = pre
+        pre = cur
+        cur = next
     }
+    
     return pre
 }
 
+// MARK: -反转相邻节点
+
+public func reverseNeighborList(head: ListNode?) -> ListNode?{
+    var pre : ListNode? = nil
+    var cur = head
+    if head == nil {
+        return nil
+    }
+    if head?.next == nil {
+        return head
+    }
+    let result = head?.next
+    var isHead = true
+    
+    
+    
+    while cur != nil {
+        
+        let next = cur?.next?.next
+        if isHead == false {
+             pre = cur?.next
+        }
+        isHead = false
+       
+        cur?.next?.next = cur
+        
+        cur?.next = pre
+        
+        cur = next
+        
+    }
+    return result
+    
+}
