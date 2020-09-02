@@ -71,7 +71,7 @@ func reverseBetween(_ head: ListNode?, _ m: Int, _ n: Int) -> ListNode? {
     return head
 }
 
-//var successor : ListNode?
+var successor : ListNode?
 
 // MARK: -反转前N个节点的链表
 func reverseNList(_ head: ListNode? , _ n : Int) -> ListNode? {

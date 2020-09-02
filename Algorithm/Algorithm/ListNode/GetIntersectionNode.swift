@@ -24,11 +24,7 @@ func getIntersectionNode(_ headA: ListNode?, _ headB: ListNode?) -> ListNode? {
     return pa
 }
 
-extension ListNode :Equatable {
-            public static func ==(lhs: ListNode, rhs: ListNode) -> Bool {
-                return lhs.val == rhs.val && lhs.next == rhs.next
-            }
-}
+
 
 //    public class ListNode: Equatable {
 //

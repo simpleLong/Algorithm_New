@@ -105,6 +105,8 @@ public  func largestRectangleArea(_ heights: [Int]) -> Int {
    
     var maxArea = 0
     var stack = [Int]()
+    let heights = heights + [0]
+    
     
     for (index ,value) in heights.enumerated() {
         
@@ -119,14 +121,7 @@ public  func largestRectangleArea(_ heights: [Int]) -> Int {
     }
     
 
-    while !stack.isEmpty {
-        let cur = stack.popLast()
-        let left = stack.isEmpty ? -1 :stack.last!
-        maxArea = max(maxArea, (heights.count-left-1)*heights[cur!])
-        
-        
-    }
-    
+
     return maxArea
     
     

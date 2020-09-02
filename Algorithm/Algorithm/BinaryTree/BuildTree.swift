@@ -26,37 +26,32 @@ import Foundation
      /  \
     15   7
  */
-var map : [Int : Int] = [:]
-func buildTree(_ preorder: [Int], _ inorder: [Int]) -> TreeNode? {
+var inorderDict : [Int : Int] = [:]
+public  func buildTree(_ preorder: [Int], _ inorder: [Int]) -> TreeNode? {
     
-    
-    
-    for (index , value) in inorder.enumerated() {
-        map[value] = index
+    guard preorder.count > 0, inorder.count > 0 else {
+        return nil
     }
-    
-    
-    return buildTreeHelp(preOrder: preorder, p_start: 0, p_end: preorder.count, inorder: inorder, in_start: 0, in_end: inorder.count)
+    for (index ,value) in inorder.enumerated() {
+        inorderDict[value] = index
+    }
+    return buildTreeHelp(preOrder: preorder, p_start: 0, p_end: preorder.count-1, inorder: inorder, in_start: 0, in_end: inorder.count-1)
 }
 
 func buildTreeHelp(preOrder : [Int],p_start : Int ,p_end :Int ,inorder: [Int] ,in_start:Int ,in_end :Int) -> TreeNode? {
-    if p_start == p_end {
-        return nil
-    }
     
-    let root_val = preOrder[p_start]
-    
-    let root = TreeNode.init(root_val)
-    
-    guard  let i_root_index = map[root_val] else {
+    if p_start > p_end {
         return nil
     }
 
-    let leftNum = i_root_index - in_start
+    let root =  TreeNode.init(preOrder[p_start])
     
-    root.left = buildTreeHelp(preOrder: preOrder, p_start: p_start+1, p_end: p_start+leftNum+1, inorder: inorder, in_start: in_start, in_end: i_root_index)
-    root.right = buildTreeHelp(preOrder: preOrder, p_start: p_start+leftNum+1, p_end: p_end, inorder: inorder, in_start: i_root_index+1, in_end: in_end)
+    let inorder_rootIndex = inorderDict[root.val]
     
+    let left_num = inorder_rootIndex! - in_start
+    
+    root.left = buildTreeHelp(preOrder: preOrder, p_start: p_start+1, p_end: p_start+left_num, inorder: inorder, in_start: in_start, in_end: inorder_rootIndex!-1)
+    root.right = buildTreeHelp(preOrder: preOrder, p_start: p_start+left_num+1, p_end: p_end, inorder: inorder, in_start: inorder_rootIndex!+1, in_end: in_end)
     return root
     
 }
@@ -80,7 +75,29 @@ func buildTreeHelp(preOrder : [Int],p_start : Int ,p_end :Int ,inorder: [Int] ,i
     15   7
  
  */
-func buildTree_1(_ inorder: [Int], _ postorder: [Int]) -> TreeNode? {
+public  func buildTree_1(_ inorder: [Int], _ postorder: [Int]) -> TreeNode? {
     
-    return nil
+    guard inorder.count > 0 ,postorder.count > 0 else {
+        return nil
+    }
+    for (i ,value) in inorder.enumerated() {
+        inorderDict[value] = i
+    }
+    return buildTreeHelp(postorder, 0, postorder.count-1, inorder, 0, inorder.count-1)
+
+}
+func buildTreeHelp(_ postorder : [Int],_ post_start : Int ,_ post_end :Int ,_ inorder: [Int] ,_ in_start:Int ,_ in_end :Int) -> TreeNode? {
+    
+    if in_start > in_end || post_start > post_end{
+        return nil
+    }
+    let root = TreeNode.init(postorder[post_end])
+    let rootIndex = inorderDict[root.val]
+
+    
+    
+    root.left = buildTreeHelp(postorder, post_start, post_start+rootIndex!-1-in_start, inorder, in_start, rootIndex!-1)
+    root.right = buildTreeHelp(postorder, post_start+rootIndex!-in_start, post_end-1, inorder, rootIndex!+1, in_end)
+
+    return root
 }
