@@ -28,8 +28,8 @@ func mergeTwoLists(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
     if l1.val < l2.val {
         l1.next = mergeTwoLists(l1.next, l2)
         return l1
-    }else {
-        l2.next = mergeTwoLists(l2.next ,l1)
+    }else{
+        l2.next = mergeTwoLists(l2.next, l1)
         return l2
     }
 }
@@ -49,8 +49,9 @@ func mergeTwoLists(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
  
  */
 func mergeKLists(_ lists: [ListNode?]) -> ListNode? {
-  //  var lists = lists
 
+   // guard  lists.count  else { return nil }
+    
     switch lists.count {
     case 0:
         return nil
@@ -59,9 +60,11 @@ func mergeKLists(_ lists: [ListNode?]) -> ListNode? {
     case 2:
         return mergeTwoLists(lists[0], lists[1])
     default:
-        let mid = lists.count/2
-        return mergeTwoLists(mergeKLists(Array(lists[0...mid])), mergeKLists(Array(lists[mid+1...lists.count-1])))
+        let count = lists.count
+        return mergeTwoLists(mergeKLists(Array(lists[0...count/2])), mergeKLists(Array(lists[count/2+1..<count])))
         
     }
+   
+
     
 }

@@ -7,6 +7,18 @@
 //
 
 import Foundation
+let nums = [3,2,1,6,0,5]
+print(nums[0...5])
+
+let res1 =  constructMaximumBinaryTree(nums)
+//initListNodeSolution()
+// let res1 =  reverseNList(node1, 2)
+//print(res1?.description)
+initListNodeSolution()
+let res2 = reverseKGroup(node1, 2)
+print(res2?.description)
+
+
 
 
 lengthOfLIS([1,3,6,7,9,4,10,5,6])
@@ -18,9 +30,8 @@ lengthOfLIS([1,3,6,7,9,4,10,5,6])
 
 
 
-
-let res1 = maxProfit_3([3,3,5,0,0,3,1,4])
-print(res1)
+//let res1 = maxProfit_3([3,3,5,0,0,3,1,4])
+//print(res1)
 
 
 var originalTime = 0

@@ -21,19 +21,21 @@ import Foundation
  */
 public func swapPairs(_ head: ListNode?) -> ListNode? {
     
-    if head?.next == nil || head == nil {
+    if head == nil || head?.next == nil {
         return head
     }
-    
-    let result = head?.next
-    
-    
-    let node =   swapPairs(head?.next?.next)
-    
-    result?.next = head
-    head?.next = node
+    let next = head?.next?.next
+    let res  = head?.next
     
     
+    let tail = swapPairs(next)
     
-    return result
+    head?.next?.next = head
+    head?.next = tail
+    
+    return res
+    
+    
+    
+
 }

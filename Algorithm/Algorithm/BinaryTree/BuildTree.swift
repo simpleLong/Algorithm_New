@@ -32,28 +32,35 @@ public  func buildTree(_ preorder: [Int], _ inorder: [Int]) -> TreeNode? {
     guard preorder.count > 0, inorder.count > 0 else {
         return nil
     }
-    for (index ,value) in inorder.enumerated() {
-        inorderDict[value] = index
-    }
-    return buildTreeHelp(preOrder: preorder, p_start: 0, p_end: preorder.count-1, inorder: inorder, in_start: 0, in_end: inorder.count-1)
+
+    return buildTreeHelp(preorder, 0, preorder.count - 1, inorder, 0, inorder.count - 1)
+
 }
 
-func buildTreeHelp(preOrder : [Int],p_start : Int ,p_end :Int ,inorder: [Int] ,in_start:Int ,in_end :Int) -> TreeNode? {
+func buildTreeHelp(_ preOrder : [Int],_ p_start : Int ,_ p_end :Int ,_ inorder: [Int] ,_ in_start:Int ,_ in_end :Int) -> TreeNode? {
     
-    if p_start > p_end {
+    if p_start > p_end || in_start > in_end {
         return nil
     }
+    
+    let rootValue = preOrder[p_start]
+    var rootIndex = -1
+    for i  in in_start...in_end {
+        if inorder[i] == rootValue {
+            rootIndex = i
+        }
+    }
+    let rootNode = TreeNode(rootValue)
+    let leftLength = rootIndex - in_start
+    
+    let leftNode = buildTreeHelp(preOrder, p_start + 1, p_start + leftLength, inorder, in_start , rootIndex - 1)
+    let rightNode = buildTreeHelp(preOrder, p_start + 1 + leftLength, p_end, inorder, rootIndex + 1, in_end)
+    rootNode.left = leftNode
+    rootNode.right = rightNode
 
-    let root =  TreeNode.init(preOrder[p_start])
     
-    let inorder_rootIndex = inorderDict[root.val]
-    
-    let left_num = inorder_rootIndex! - in_start
-    
-    root.left = buildTreeHelp(preOrder: preOrder, p_start: p_start+1, p_end: p_start+left_num, inorder: inorder, in_start: in_start, in_end: inorder_rootIndex!-1)
-    root.right = buildTreeHelp(preOrder: preOrder, p_start: p_start+left_num+1, p_end: p_end, inorder: inorder, in_start: inorder_rootIndex!+1, in_end: in_end)
-    return root
-    
+    return rootNode
+
 }
 /**
  106. 从中序与后序遍历序列构造二叉树
@@ -77,27 +84,94 @@ func buildTreeHelp(preOrder : [Int],p_start : Int ,p_end :Int ,inorder: [Int] ,i
  */
 public  func buildTree_1(_ inorder: [Int], _ postorder: [Int]) -> TreeNode? {
     
-    guard inorder.count > 0 ,postorder.count > 0 else {
+    if inorder.count == 0 || postorder.count == 0 {
         return nil
     }
-    for (i ,value) in inorder.enumerated() {
-        inorderDict[value] = i
-    }
-    return buildTreeHelp(postorder, 0, postorder.count-1, inorder, 0, inorder.count-1)
+    
+    return buildTreeHelp_1(inorder, 0, inorder.count - 1, postorder, 0, postorder.count - 1)
 
 }
-func buildTreeHelp(_ postorder : [Int],_ post_start : Int ,_ post_end :Int ,_ inorder: [Int] ,_ in_start:Int ,_ in_end :Int) -> TreeNode? {
+
+func buildTreeHelp_1(_ inorder: [Int] ,_ in_start: Int ,_ in_end: Int ,_ postorder: [Int], _ p_start : Int ,_ p_end : Int) -> TreeNode? {
     
-    if in_start > in_end || post_start > post_end{
+    if in_start > in_end || p_start > p_end || in_start < 0 || p_start < 0{
         return nil
     }
-    let root = TreeNode.init(postorder[post_end])
-    let rootIndex = inorderDict[root.val]
-
+    let rootValue = postorder[p_end]
+    let rootNode = TreeNode(rootValue)
+    
+    var rootIndex = 0
+    
+    for i  in in_start...in_end {
+        if inorder[i] == rootValue {
+            rootIndex = i
+            break
+        }
+    }
+    let leftlength = rootIndex - in_start
     
     
-    root.left = buildTreeHelp(postorder, post_start, post_start+rootIndex!-1-in_start, inorder, in_start, rootIndex!-1)
-    root.right = buildTreeHelp(postorder, post_start+rootIndex!-in_start, post_end-1, inorder, rootIndex!+1, in_end)
+    let left = buildTreeHelp_1(inorder, in_start, rootIndex - 1, postorder, p_start , p_start + leftlength - 1)
+    let right = buildTreeHelp_1(inorder, rootIndex + 1, in_end, postorder, p_start + leftlength, p_end-1)
+    
+    rootNode.left = left
+    rootNode.right = right
 
-    return root
+    return rootNode
+    
+}
+
+/**
+ 
+ 给定一棵二叉树，返回所有重复的子树。对于同一类的重复子树，你只需要返回其中任意一棵的根结点即可。
+
+ 两棵树重复是指它们具有相同的结构以及相同的结点值。
+
+ 示例 1：
+
+         1
+        / \
+       2   3
+      /   / \
+     4   2   4
+        /
+       4
+ 下面是两个重复的子树：
+
+       2
+      /
+     4
+ 和
+
+     4
+ 因此，你需要以列表的形式返回上述重复子树的根结点。
+ */
+var dupNodes : [TreeNode] = []
+var nodeMap : [String : Int] = [:]
+func findDuplicateSubtrees(_ root: TreeNode?) -> [TreeNode?] {
+
+    guard let root = root else { return [nil] }
+    _ = traverse(root)
+    return dupNodes
+}
+
+func traverse(_ node : TreeNode?) -> String {
+
+    guard let node = node else {
+        return "#"
+    }
+    let left = traverse(node.left)
+    let right = traverse(node.right)
+    
+    let strRes =  left + "," + right + "," + String(node.val)
+    
+    if let count = nodeMap[strRes] {
+        nodeMap[strRes] = count + 1
+    }else {
+        nodeMap[strRes] = 1
+    }
+    if nodeMap[strRes] == 2 {
+        dupNodes.append(node)
+    }
+    return strRes
 }

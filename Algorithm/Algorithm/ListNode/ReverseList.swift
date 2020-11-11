@@ -21,33 +21,36 @@ import Foundation
  */
 
 //MARK: 迭代
-
 //public  func reverseList(_ head: ListNode?) -> ListNode? {
 //
-//    var pre : ListNode? = nil
-//    var cur = head
 //
-//    while cur != nil  {
-//
-//        (cur!.next,pre,cur) = (pre,cur ,cur?.next)
-//
+//    if head?.next == nil {
+//        return head
 //    }
+//    let result = reverseList(head?.next)
 //
-//    return pre
+//    head?.next?.next = head
+//    head?.next = nil
+//
+//    return result
+//
 //}
+//
 //MARK: 递归方式
 public  func reverseList(_ head: ListNode?) -> ListNode? {
     
-
-    if head?.next == nil {
+    if head == nil || head?.next == nil{
         return head
     }
-    let result = reverseList(head?.next)
+    let next = head?.next
     
-    head?.next?.next = head
+    let res = reverseList(head?.next)
+    
     head?.next = nil
+    next?.next = head
+    return res
     
-    return result
+    
     
 }
 /**
@@ -63,8 +66,8 @@ public  func reverseList(_ head: ListNode?) -> ListNode? {
  输出: 1->4->3->2->5->NULL
  */
 func reverseBetween(_ head: ListNode?, _ m: Int, _ n: Int) -> ListNode? {
-
-    if m == 1 {
+    
+    if m == 1{
         return reverseNList(head, n)
     }
     head?.next = reverseBetween(head?.next, m-1, n-1)
@@ -75,19 +78,20 @@ var successor : ListNode?
 
 // MARK: -反转前N个节点的链表
 func reverseNList(_ head: ListNode? , _ n : Int) -> ListNode? {
+    
+    
     if n == 1 {
         successor = head?.next
-        
         return head
     }
-
-    let last = reverseNList(head?.next, n-1)
-    head?.next?.next = head
+    
+    let next = head?.next
+    let last  = reverseNList(head?.next, n-1)
+    next?.next = head
     head?.next = successor
     return last
     
-    
-    
+
     
 }
 /**
@@ -121,42 +125,38 @@ func reverseNList(_ head: ListNode? , _ n : Int) -> ListNode? {
 
 var lastHead :ListNode?
 
-//public  func reverseKGroup(_ head: ListNode?, _ k: Int) -> ListNode? {
-//
-//
-//    let dummyHead = ListNode.init(0)
-//    dummyHead.next = head
-//
-//    var pre : ListNode? = dummyHead
-//    var end : ListNode? = dummyHead
-//    var first = head
-//
-//    for _ in 0..<k {
-//        end =  end?.next
-//    }
-//
-//    while end != nil {
-//        let next = end?.next
-//        end?.next = nil
-//        pre?.next = reverseList(first)
-//        first?.next = next
-//
-//        pre = first
-//        end = first
-//        first = next//pre?.next
-//
-//        for _ in 0..<k {
-//            end = end?.next
-//        }
-//
-//
-//    }
-//
-//    return dummyHead.next
-//}
+public  func reverseKGroup(_ head: ListNode?, _ k: Int) -> ListNode? {
+    
+    
+    var count = k
+    var start = 1
+    var end  = head
+    var res = head
+    var succesor : ListNode?
+    while end != nil {
+        
+        while  count > 1 {
+            end = end?.next
+            
+            count = count - 1
+            succesor = end?.next
+            
+        }
+        if end != nil {
+            res = reverseBetween(res, start, start+k-1)
+            
+            start = start + k
+            count = k
+            end = succesor
+        }
+        
+    }
+    return res
+    
+}
 
 func reverseList(head: ListNode?) -> ListNode? {
-
+    
     var pre :ListNode?
     var cur = head
     
@@ -191,10 +191,10 @@ public func reverseNeighborList(head: ListNode?) -> ListNode?{
         
         let next = cur?.next?.next
         if isHead == false {
-             pre = cur?.next
+            pre = cur?.next
         }
         isHead = false
-       
+        
         cur?.next?.next = cur
         
         cur?.next = pre
