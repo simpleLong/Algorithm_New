@@ -12,6 +12,17 @@ import Foundation
 lengthOfLIS([1,3,6,7,9,4,10,5,6])
 
 
+//let node1  =  ListNode.init(1)
+//let node2  =  ListNode.init(2)
+//let node3  =  ListNode.init(3)
+//let node4  =  ListNode.init(4)
+//let node5  =  ListNode.init(5)
+
+
+
+
+let res1 = removeDuplicateNodes(node: node1)
+print("res===",res1)
 
 
 
@@ -19,8 +30,7 @@ lengthOfLIS([1,3,6,7,9,4,10,5,6])
 
 
 
-let res1 = maxProfit_3([3,3,5,0,0,3,1,4])
-print(res1)
+
 
 
 var originalTime = 0

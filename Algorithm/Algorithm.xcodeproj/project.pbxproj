@@ -40,6 +40,7 @@
 		8A727B3024A78E68007C49AE /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A727B2F24A78E68007C49AE /* Set.swift */; };
 		8A727B3224A79010007C49AE /* ProductExceptSelf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A727B3124A79010007C49AE /* ProductExceptSelf.swift */; };
 		8A89E6F124F0ABE300D44797 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89E6F024F0ABE300D44797 /* Circle.swift */; };
+		8A8C94B42561455F00AA5D08 /* BitOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C94B32561455F00AA5D08 /* BitOperation.swift */; };
 		8A8D78AB24F5112200F5C328 /* LengthOfLIS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D78AA24F5112200F5C328 /* LengthOfLIS.swift */; };
 		8A8D78AD24F51CEA00F5C328 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D78AC24F51CEA00F5C328 /* Bag.swift */; };
 		8A933AED2483FBEB00D6B0F7 /* SortList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A933AEC2483FBEB00D6B0F7 /* SortList.swift */; };
@@ -96,6 +97,7 @@
 		8A727B2F24A78E68007C49AE /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 		8A727B3124A79010007C49AE /* ProductExceptSelf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductExceptSelf.swift; sourceTree = "<group>"; };
 		8A89E6F024F0ABE300D44797 /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
+		8A8C94B32561455F00AA5D08 /* BitOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitOperation.swift; sourceTree = "<group>"; };
 		8A8D78AA24F5112200F5C328 /* LengthOfLIS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LengthOfLIS.swift; sourceTree = "<group>"; };
 		8A8D78AC24F51CEA00F5C328 /* Bag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bag.swift; sourceTree = "<group>"; };
 		8A933AEC2483FBEB00D6B0F7 /* SortList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortList.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		5256E7432477A4FA0005CB62 /* Algorithm */ = {
 			isa = PBXGroup;
 			children = (
+				8A8C94B22561453E00AA5D08 /* BitOperation */,
 				8A6ACCF824EA6AE500411FB4 /* Queue */,
 				8A1FF41C24E7F16000FA772C /* Backtrace */,
 				527970ED24AC30FC00726A30 /* Greedy */,
@@ -275,6 +278,14 @@
 			path = HashMap;
 			sourceTree = "<group>";
 		};
+		8A8C94B22561453E00AA5D08 /* BitOperation */ = {
+			isa = PBXGroup;
+			children = (
+				8A8C94B32561455F00AA5D08 /* BitOperation.swift */,
+			);
+			path = BitOperation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -336,6 +347,7 @@
 				52BAB8AA248A6F79005F47AC /* TopK.swift in Sources */,
 				8A727B3224A79010007C49AE /* ProductExceptSelf.swift in Sources */,
 				52ADE1CF247FC03D00E82CEC /* SwapPairs.swift in Sources */,
+				8A8C94B42561455F00AA5D08 /* BitOperation.swift in Sources */,
 				8A933AF12484087D00D6B0F7 /* GetIntersectionNode.swift in Sources */,
 				52BAB8A52489E27E005F47AC /* MonotonicStack.swift in Sources */,
 				52732A022488DA3900E7E766 /* ClimbingStairs.swift in Sources */,

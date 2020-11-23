@@ -31,6 +31,7 @@ class MonotonicQueue <T :Comparable> {
     }
     
 }
+// MARK: -解题思路使用一个单调递减的队列,顶部为最大值
 public  func maxSlidingWindow(_ nums: [Int], _ k: Int) -> [Int] {
      if k > nums.count {
          return []
