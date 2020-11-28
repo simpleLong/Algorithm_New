@@ -22,50 +22,76 @@ import Foundation
  */
 
  //MARK: 使用二分排序法
+//func sortList(_ head: ListNode?) -> ListNode? {
+//
+//    if head == nil || head?.next == nil {
+//        return head
+//    }
+//
+//    let middle = middleNode(head)
+//    let next = middle?.next
+//
+//    middle?.next = nil
+//    let left = sortList(head)
+//    let right = sortList(next)
+//
+//    return mergeTwolists(left, right)
+//
+//}
+//
+//func middleNode( _ head: ListNode?) -> ListNode? {
+//
+//    guard let head = head else {
+//        return nil
+//    }
+//    var slow : ListNode? = head
+//    var fast : ListNode? = head.next?.next
+//    while fast != nil && fast?.next != nil {
+//        slow = slow?.next
+//        fast = fast?.next?.next
+//    }
+//
+//    return slow
+//}
+//
+//private func mergeTwolists(_ l1 :ListNode? , _ l2 :ListNode?) -> ListNode? {
+//    guard let l1 = l1 else {
+//        return l2
+//    }
+//    guard let l2 = l2 else {
+//        return l1
+//    }
+//    if l1.val < l2.val {
+//        l1.next = mergeTwolists(l1.next, l2)
+//        return l1
+//    }else{
+//        l2.next = mergeTwolists(l2.next, l1)
+//        return l2
+//    }
+//}
 func sortList(_ head: ListNode?) -> ListNode? {
-    
-    if head == nil || head?.next == nil {
+    if head == nil {
         return head
     }
-
     let middle = middleNode(head)
-    let next = middle?.next
     
+    let right = sortList(middle?.next)
     middle?.next = nil
-    let left = sortList(head)
-    let right = sortList(next)
+    let left  = sortList(head)
     
-    return mergeTwolists(left, right)
+    return mergeTwoLists(left, right)
 
+    
 }
 
 func middleNode( _ head: ListNode?) -> ListNode? {
+    var slow = head
+    var fast = head
     
-    guard let head = head else {
-        return nil
-    }
-    var slow : ListNode? = head
-    var fast : ListNode? = head.next?.next
     while fast != nil && fast?.next != nil {
         slow = slow?.next
         fast = fast?.next?.next
     }
-    
     return slow
-}
-
-private func mergeTwolists(_ l1 :ListNode? , _ l2 :ListNode?) -> ListNode? {
-    guard let l1 = l1 else {
-        return l2
-    }
-    guard let l2 = l2 else {
-        return l1
-    }
-    if l1.val < l2.val {
-        l1.next = mergeTwolists(l1.next, l2)
-        return l1
-    }else{
-        l2.next = mergeTwolists(l2.next, l1)
-        return l2
-    }
+    
 }

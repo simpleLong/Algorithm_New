@@ -39,13 +39,17 @@ func maxProfit1(_ prices: [Int]) -> Int {
     let n  = prices.count
     var dp_1 = -prices[0]
     var dp_0 = 0
-    
-    
+
+
     for i  in 1..<n {
         (dp_0,dp_1) = (max(dp_0, dp_1 + prices[i]),max(dp_1, -prices[i]))
     }
 
     return dp_0
+    
+
+    
+    
     
     
 }
@@ -138,29 +142,12 @@ func maxProfit_2(_ prices: [Int]) -> Int {
  */
 func maxProfit_3(_ prices: [Int]) -> Int {
 
+
     let k = 2
     
-    var dp = [[Int]].init(repeating: [Int].init(repeating: 0, count: 2), count: k+1)
     
     
-    for i  in 0..<prices.count {
-
-        for j in 1...k {
-            if i == 0 {
-                dp[j][0] = 0
-                dp[j][1] = -prices[i]
-
-            }else{
-                (dp[j][0] ,dp[j][1]) = (max(dp[j][0], dp[j][1] + prices[i]) ,max(dp[j][1], dp[j-1][0] - prices[i] ) )
-
-            }
-            
-            
-            
-        }
-    }
     
-    return dp[k][0]
 }
 
 

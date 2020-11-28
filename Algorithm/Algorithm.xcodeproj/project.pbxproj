@@ -49,6 +49,7 @@
 		8A933AF12484087D00D6B0F7 /* GetIntersectionNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A933AF02484087D00D6B0F7 /* GetIntersectionNode.swift */; };
 		8AA636A824EBB93A009202ED /* DungeonJumping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA636A724EBB93A009202ED /* DungeonJumping.swift */; };
 		8AA9B5B2247957B400ED5E5B /* Symmetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9B5B1247957B400ED5E5B /* Symmetric.swift */; };
+		8ABE8F83255BB4D400CF4D92 /* ConstructTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABE8F82255BB4D400CF4D92 /* ConstructTree.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -107,6 +108,7 @@
 		8A933AF02484087D00D6B0F7 /* GetIntersectionNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIntersectionNode.swift; sourceTree = "<group>"; };
 		8AA636A724EBB93A009202ED /* DungeonJumping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonJumping.swift; sourceTree = "<group>"; };
 		8AA9B5B1247957B400ED5E5B /* Symmetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symmetric.swift; sourceTree = "<group>"; };
+		8ABE8F82255BB4D400CF4D92 /* ConstructTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructTree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				5256E7502477B83D0005CB62 /* BST.swift */,
 				8AA9B5B1247957B400ED5E5B /* Symmetric.swift */,
 				8A1FF41F24E93CA300FA772C /* BinarySearchTree.swift */,
+				8ABE8F82255BB4D400CF4D92 /* ConstructTree.swift */,
 			);
 			path = BinaryTree;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				5256E7512477B83D0005CB62 /* BST.swift in Sources */,
 				8A6ACCFE24EA7F0700411FB4 /* BuildTree.swift in Sources */,
 				8A0848FD2482699B00D48112 /* RotateListNode.swift in Sources */,
+				8ABE8F83255BB4D400CF4D92 /* ConstructTree.swift in Sources */,
 				8A6ACCFA24EA6B1700411FB4 /* Queue.swift in Sources */,
 				8A727B2E24A7815B007C49AE /* Anagram.swift in Sources */,
 				527F08ED247CB00C00668911 /* ListNode.swift in Sources */,

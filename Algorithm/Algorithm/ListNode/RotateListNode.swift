@@ -29,36 +29,26 @@ import Foundation
  向右旋转 4 步: 2->0->1->NULL
  */
 public  func rotateRight(_ head: ListNode?, _ k: Int) -> ListNode? {//解题思路先把链表变成环,然后找到旋转的地方断开旋转
-    
-
     if head == nil {
-        return nil
+        return head
     }
-    var head = head
-    
-    var length = 1
-    var last : ListNode? = head
-    while last?.next != nil {
-        last = last?.next
+    var length =  1
+    var end = head
+    while end?.next != nil {
+        end = end?.next
         length += 1
     }
-    last?.next = head
     
-    var n  = (length - k%length)%length
-
-    for _ in 0..<n {
-        head = head?.next
-        last = last?.next
-        n -= 1
+    end?.next = head
+    var  count = (length - k%length)%length
+    var res = head
+    while count > 0 {
+        res = res?.next
+        end = end?.next
+        count -= 1
     }
+    end?.next = nil
 
-    last?.next = nil
-    
-    return head
-    
-    
-    
-    
-    
+    return res
     
 }
