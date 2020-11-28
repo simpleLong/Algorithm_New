@@ -9,7 +9,10 @@
 import Foundation
 
 
-lengthOfLIS([1,3,6,7,9,4,10,5,6])
+let nums = [2,3,4]
+let res1 = robII(nums)
+print("res===",res1)
+
 
 
 //let node1  =  ListNode.init(1)
@@ -21,8 +24,7 @@ lengthOfLIS([1,3,6,7,9,4,10,5,6])
 
 
 
-let res1 = removeDuplicateNodes(node: node1)
-print("res===",res1)
+
 
 
 

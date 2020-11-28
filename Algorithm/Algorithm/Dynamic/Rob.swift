@@ -77,3 +77,31 @@ func robInternal(root : TreeNode?) -> (Int ,Int) {
     
     return res
 }
+
+func robII(_ nums : [Int]) -> Int {
+    if nums.count == 0 {
+        return 0
+    }
+    if nums.count == 1 {
+        return nums[0]
+    }
+    
+    return max(dp(start: 0, end: nums.count - 2, nums: nums), dp(start: 1, end: nums.count - 2, nums: nums))
+
+}
+
+func dp(start: Int ,end: Int ,nums:[Int]) -> Int {
+    
+    var dp = [Int].init(repeating: 0, count: end - start + 1)
+    let newNums = Array(nums[start...end])
+    for i  in 0..<newNums.count {
+        if i == 0 {
+            dp[0] = newNums[i]
+        }else if i ==  1 {
+            dp[1] = max(newNums[0], newNums[1])
+        }else{
+            dp[i] = max(dp[i-1], dp[i-2] + newNums[i])
+        }
+    }
+    return dp[end-start]
+}
