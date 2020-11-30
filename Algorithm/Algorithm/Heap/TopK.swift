@@ -23,16 +23,56 @@ import Foundation
 
  你可以假设 k 总是有效的，且 1 ≤ k ≤ 数组的长度。
  */
-public func findKthLargest(_ nums: [Int], _ k: Int) -> Int {
+//public func findKthLargest(_ nums: [Int], _ k: Int) -> Int {
+//
+//    var heap = Heap.init(array: nums, sort: >)
+//    for _ in 0..<k-1 {
+//       _ = heap.remove()
+//    }
+//
+//
+//
+//    return heap.peek()!
+//
+//
+//}
 
-    var heap = Heap.init(array: nums, sort: >)
-    for _ in 0..<k-1 {
-       _ = heap.remove()
+func findKthLargest(_ nums: [Int], _ k: Int) -> Int {
+    var nums = nums
+    return randomizedSelect(&nums,0,nums.count-1,k-1)
+}
+
+func randomizedPartition(_ array : inout [Int] ,_ low : Int ,_ high : Int) -> Int {
+var resIndex = low
+
+let pivotIndex = Int.random(in: low...high)
+array.swapAt(pivotIndex, high)
+for i  in low...high {
+    if array[i] > array[high] {
+        array.swapAt(i, resIndex)
+        resIndex += 1
+    }
+}
+array.swapAt(high, resIndex)
+
+return resIndex
+
+}
+
+func randomizedSelect(_ array : inout [Int] ,_ low : Int ,_ high : Int,_ k : Int) -> Int {
+if low < high {
+    let p  = randomizedPartition(&array, low, high)
+    
+    if p  == k {
+        return array[p]
+    }else if p > k {
+       return randomizedSelect(&array,  low,  p-1,  k)
+    }else {
+       return  randomizedSelect(&array,  p+1,  high,  k)
     }
     
     
-    
-    return heap.peek()!
-    
-    
+}else{
+    return array[low]
+}
 }

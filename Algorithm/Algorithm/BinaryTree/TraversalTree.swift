@@ -62,27 +62,30 @@ public  func inorderTraversal(_ root: TreeNode?) -> [Int] {
  */
 public func preorderTraversal(_ root : TreeNode?) -> [Int] {
 
-    var res = [Int]()
+    var res : [Int] = []
     guard let root = root else {
         return res
     }
 
-    var stack = [TreeNode]()
-    stack.append(root)
-    while !stack.isEmpty  {
+    var stack : [TreeNode] = [root]
+    
+    while stack.count != 0 {
         
-        if let node = stack.popLast() {
-            res.append(node.val)
+        if let  node = stack.popLast(){
+            res.append(root.val)
+            
             if let right = node.right {
                 stack.append(right)
             }
-            
             if let left = node.left {
                 stack.append(left)
             }
         }
-        
+
+
+
     }
+    
     
     return res
     
@@ -117,13 +120,14 @@ func postorderTraversal(_ root: TreeNode?) -> [Int] {
 //
 //
 //        if let node = stackin.popLast() {
+//            res.append(node.val)
 //            if let left = node.left {
 //                stackin.append(left)
 //            }
 //            if let right = node.right {
 //                stackin.append(right)
 //            }
-//            res.append(node.val)
+//
 //        }
 //
 //    }
