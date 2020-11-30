@@ -45,13 +45,33 @@ func calculateMinimumHP(_ dungeon: [[Int]]) -> Int {
     }
     let n  = dungeon.count
     let m  = dungeon[0].count
-    
-    for i  in 0..<n {
-        for j  in 0..<m {
+    var dp = [[Int]].init(repeating: [Int].init(repeating: Int.max, count: m+1), count: n+1)
+    dp[n-1][m] = 1
+    dp[n][m-1] = 1
+    for i  in (0..<n).reversed() {
+        for j  in (0..<m).reversed() {
+            let minres = min(dp[i+1][j], dp[i][j+1]) - dp[i][j]
+            dp[i][j] = max(minres, 1)
+            print("i===\(i),j====\(j)")
             
         }
     }
     
     
-    return 0
+    return dp[0][0]
 }
+//class Solution {
+//public:
+//    int calculateMinimumHP(vector<vector<int>>& dungeon) {
+//        int n = dungeon.size(), m = dungeon[0].size();
+//        vector<vector<int>> dp(n + 1, vector<int>(m + 1, INT_MAX));
+//        dp[n][m - 1] = dp[n - 1][m] = 1;
+//        for (int i = n - 1; i >= 0; --i) {
+//            for (int j = m - 1; j >= 0; --j) {
+//                int minn = min(dp[i + 1][j], dp[i][j + 1]);
+//                dp[i][j] = max(minn - dungeon[i][j], 1);
+//            }
+//        }
+//        return dp[0][0];
+//    }
+//};
