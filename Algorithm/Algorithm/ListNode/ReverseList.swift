@@ -42,12 +42,12 @@ public  func reverseList(_ head: ListNode?) -> ListNode? {
     if head == nil || head?.next == nil{
         return head
     }
-    let next = head?.next
+
     
     let res = reverseList(head?.next)
-    
+    head?.next?.next = head
     head?.next = nil
-    next?.next = head
+    
     return res
     
     

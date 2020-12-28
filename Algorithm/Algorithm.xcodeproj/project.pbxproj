@@ -48,6 +48,8 @@
 		8AA636A824EBB93A009202ED /* DungeonJumping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA636A724EBB93A009202ED /* DungeonJumping.swift */; };
 		8AA9B5B2247957B400ED5E5B /* Symmetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9B5B1247957B400ED5E5B /* Symmetric.swift */; };
 		8ABE8F83255BB4D400CF4D92 /* ConstructTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABE8F82255BB4D400CF4D92 /* ConstructTree.swift */; };
+		8AC14AAC2574D8E200E3925C /* Depth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC14AAB2574D8E200E3925C /* Depth.swift */; };
+		8AC14AB3257502CF00E3925C /* LRU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC14AB2257502CF00E3925C /* LRU.swift */; };
 		8AC9CC7C255D312B00715649 /* TwoPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9CC7B255D312B00715649 /* TwoPoint.swift */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +108,8 @@
 		8AA636A724EBB93A009202ED /* DungeonJumping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonJumping.swift; sourceTree = "<group>"; };
 		8AA9B5B1247957B400ED5E5B /* Symmetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symmetric.swift; sourceTree = "<group>"; };
 		8ABE8F82255BB4D400CF4D92 /* ConstructTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructTree.swift; sourceTree = "<group>"; };
+		8AC14AAB2574D8E200E3925C /* Depth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Depth.swift; sourceTree = "<group>"; };
+		8AC14AB2257502CF00E3925C /* LRU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRU.swift; sourceTree = "<group>"; };
 		8AC9CC7B255D312B00715649 /* TwoPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,7 +143,7 @@
 		5256E7432477A4FA0005CB62 /* Algorithm */ = {
 			isa = PBXGroup;
 			children = (
-				8ACBF91125626CE50010E26F /* New Group */,
+				8ACBF91125626CE50010E26F /* LRU */,
 				8AC9CC7A255D310000715649 /* TwoPoint */,
 				8A6ACCF824EA6AE500411FB4 /* Queue */,
 				8A1FF41C24E7F16000FA772C /* Backtrace */,
@@ -168,6 +172,7 @@
 				8AA9B5B1247957B400ED5E5B /* Symmetric.swift */,
 				8A1FF41F24E93CA300FA772C /* BinarySearchTree.swift */,
 				8ABE8F82255BB4D400CF4D92 /* ConstructTree.swift */,
+				8AC14AAB2574D8E200E3925C /* Depth.swift */,
 			);
 			path = BinaryTree;
 			sourceTree = "<group>";
@@ -290,11 +295,12 @@
 			path = TwoPoint;
 			sourceTree = "<group>";
 		};
-		8ACBF91125626CE50010E26F /* New Group */ = {
+		8ACBF91125626CE50010E26F /* LRU */ = {
 			isa = PBXGroup;
 			children = (
+				8AC14AB2257502CF00E3925C /* LRU.swift */,
 			);
-			path = "New Group";
+			path = LRU;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,6 +372,7 @@
 				8A933AEF2484001700D6B0F7 /* DeleteNode.swift in Sources */,
 				8AC9CC7C255D312B00715649 /* TwoPoint.swift in Sources */,
 				527F08EB247CAF8500668911 /* ReverseList.swift in Sources */,
+				8AC14AB3257502CF00E3925C /* LRU.swift in Sources */,
 				52732A042488E7CF00E7E766 /* Profit.swift in Sources */,
 				5256E7452477A4FA0005CB62 /* main.swift in Sources */,
 				52A62BB0248491A200009465 /* Sum.swift in Sources */,
@@ -386,6 +393,7 @@
 				8A1FF41E24E7F18600FA772C /* BackTrace.swift in Sources */,
 				8A933AED2483FBEB00D6B0F7 /* SortList.swift in Sources */,
 				529D786E247BC5BE00EB7300 /* Rob.swift in Sources */,
+				8AC14AAC2574D8E200E3925C /* Depth.swift in Sources */,
 				8A89E6F124F0ABE300D44797 /* Circle.swift in Sources */,
 				8A8D78AD24F51CEA00F5C328 /* Bag.swift in Sources */,
 				8A8D78AB24F5112200F5C328 /* LengthOfLIS.swift in Sources */,

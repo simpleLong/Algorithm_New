@@ -7,8 +7,13 @@
 //
 
 import Foundation
-fileprivate let nums = [1,2,2,3,2,4,7]
-fileprivate let res1 = getTheAllcombination(nums: nums, target: 7)
+//fileprivate let nums = [1,2,2,3,2,4,7]
+//fileprivate let res1 = getTheAllcombination(nums: nums, target: 7)
+
+var nums : [[Character]] = [["5","3",".",".","7",".",".",".","."],["6",".",".","1","9","5",".",".","."],[".","9","8",".",".",".",".","6","."],["8",".",".",".","6",".",".",".","3"],["4",".",".","8",".","3",".",".","1"],["7",".",".",".","2",".",".",".","6"],[".","6",".",".",".",".","2","8","."],[".",".",".","4","1","9",".",".","5"],[".",".",".",".","8",".",".","7","9"]]
+
+solveSudoku(&nums)
+
 
 func partition(_ arr : inout [Int] ,_ low : Int ,_ high : Int) -> Int {
     let poivtIndex = 2//Int.random(in: low...high)
