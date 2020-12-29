@@ -42,7 +42,7 @@ public  func reverseList(_ head: ListNode?) -> ListNode? {
     if head == nil || head?.next == nil{
         return head
     }
-
+    
     
     let res = reverseList(head?.next)
     head?.next?.next = head
@@ -91,7 +91,7 @@ func reverseNList(_ head: ListNode? , _ n : Int) -> ListNode? {
     head?.next = successor
     return last
     
-
+    
     
 }
 /**
@@ -204,4 +204,43 @@ public func reverseNeighborList(head: ListNode?) -> ListNode?{
     }
     return result
     
+}
+/**
+ 2. 两数相加
+ 给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。
+ 
+ 如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。
+ 
+ 您可以假设除了数字 0 之外，这两个数都不会以 0 开头。
+ 
+ 示例：
+ 
+ 输入：(2 -> 4 -> 3) + (5 -> 6 -> 4)
+ 输出：7 -> 0 -> 8
+ 原因：342 + 465 = 807
+ */
+
+
+func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
+    
+    var l1 = l1
+    var l2 = l2
+    let head = ListNode(0)
+    var l3 : ListNode? = head
+    var plusOne = 0
+        
+    while l1 != nil || l2 != nil || plusOne > 0 {
+        
+        let  sum  = (l1?.val ?? 0) + (l2?.val ?? 0)  + plusOne
+        
+        plusOne = sum/10
+        l3?.next = ListNode(sum%10)
+        
+        l1 = l1?.next
+        l2 = l2?.next
+        l3 = l3?.next
+        
+    }
+    
+    return head.next
 }
