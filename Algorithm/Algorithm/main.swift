@@ -10,6 +10,8 @@ import Foundation
 let nums = [3,2,1,6,0,5]
 print(nums[0...5])
 
+
+isIsomorphic("abab","baba")
 let res1 =  constructMaximumBinaryTree(nums)
 //initListNodeSolution()
 // let res1 =  reverseNList(node1, 2)

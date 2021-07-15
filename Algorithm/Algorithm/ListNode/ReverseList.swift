@@ -21,38 +21,41 @@ import Foundation
  */
 
 //MARK: 迭代
+public  func reverseList(_ head: ListNode?) -> ListNode? {
+
+
+    
+    var cur = head
+
+    var pre : ListNode? = nil
+    
+    while cur != nil {
+      let  next = cur?.next
+        cur?.next = pre
+        
+        (pre ,cur) = (cur,next)
+    }
+
+    return pre
+}
+
+//MARK: 递归方式
 //public  func reverseList(_ head: ListNode?) -> ListNode? {
 //
-//
-//    if head?.next == nil {
+//    if head == nil || head?.next == nil{
 //        return head
 //    }
-//    let result = reverseList(head?.next)
+//    let next = head?.next
 //
-//    head?.next?.next = head
+//    let res = reverseList(head?.next)
+//
 //    head?.next = nil
+//    next?.next = head
+//    return res
 //
-//    return result
+//
 //
 //}
-//
-//MARK: 递归方式
-public  func reverseList(_ head: ListNode?) -> ListNode? {
-    
-    if head == nil || head?.next == nil{
-        return head
-    }
-    let next = head?.next
-    
-    let res = reverseList(head?.next)
-    
-    head?.next = nil
-    next?.next = head
-    return res
-    
-    
-    
-}
 /**
  92. 反转链表 II
  反转从位置 m 到 n 的链表。请使用一趟扫描完成反转。

@@ -140,15 +140,15 @@ func maxProfit_2(_ prices: [Int]) -> Int {
  
  
  */
-func maxProfit_3(_ prices: [Int]) -> Int {
-
-
-    let k = 2
-    
-    
-    
-    
-}
+//func maxProfit_3(_ prices: [Int]) -> Int {
+//
+//
+//    let k = 2
+//    
+//    
+//    
+//    
+//}
 
 
 

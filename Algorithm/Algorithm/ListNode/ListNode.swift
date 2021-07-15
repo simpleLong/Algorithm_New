@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class ListNode : Equatable,CustomStringConvertible{
+public class ListNode : CustomStringConvertible{
     public var description: String {
         var customNext = self.next
         var str = "链表的值为\(val)"
@@ -19,28 +19,13 @@ public class ListNode : Equatable,CustomStringConvertible{
         return str
     }
     
-    static public  func == (lhs: ListNode, rhs: ListNode) -> Bool {
-     
-        var lhs = lhs
-        var rhs = rhs
-        return equal(&lhs, &rhs)
-    }
-    
+
     
     public var val :Int
     public var next :ListNode?
     public init(_ val: Int) {
         self.val = val
         self.next = nil
-    }
-    
-    static func equal(_ lptr: UnsafeRawPointer , _ rptr: UnsafeRawPointer) -> Bool {
-        let lHeapPtr = UnsafeRawPointer(bitPattern: lptr.load(as: UInt.self))
-        let rHeapPtr = UnsafeRawPointer(bitPattern: rptr.load(as: UInt.self))
-        
-        return lHeapPtr == rHeapPtr
-        
-        
     }
 }
 let node1  =  ListNode.init(1)

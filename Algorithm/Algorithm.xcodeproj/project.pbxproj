@@ -42,6 +42,7 @@
 		8A789C36256C136900FE3CA5 /* Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A789C35256C136900FE3CA5 /* Distance.swift */; };
 		8A89E6F124F0ABE300D44797 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89E6F024F0ABE300D44797 /* Circle.swift */; };
 		8A8C94B42561455F00AA5D08 /* BitOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C94B32561455F00AA5D08 /* BitOperation.swift */; };
+		8A8CF5EB2598C12D006C9C08 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8CF5EA2598C12D006C9C08 /* String.swift */; };
 		8A8D78AB24F5112200F5C328 /* LengthOfLIS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D78AA24F5112200F5C328 /* LengthOfLIS.swift */; };
 		8A8D78AD24F51CEA00F5C328 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D78AC24F51CEA00F5C328 /* Bag.swift */; };
 		8A933AED2483FBEB00D6B0F7 /* SortList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A933AEC2483FBEB00D6B0F7 /* SortList.swift */; };
@@ -101,6 +102,7 @@
 		8A789C35256C136900FE3CA5 /* Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Distance.swift; sourceTree = "<group>"; };
 		8A89E6F024F0ABE300D44797 /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 		8A8C94B32561455F00AA5D08 /* BitOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitOperation.swift; sourceTree = "<group>"; };
+		8A8CF5EA2598C12D006C9C08 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		8A8D78AA24F5112200F5C328 /* LengthOfLIS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LengthOfLIS.swift; sourceTree = "<group>"; };
 		8A8D78AC24F51CEA00F5C328 /* Bag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bag.swift; sourceTree = "<group>"; };
 		8A933AEC2483FBEB00D6B0F7 /* SortList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortList.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		5256E7432477A4FA0005CB62 /* Algorithm */ = {
 			isa = PBXGroup;
 			children = (
+				8A8CF5E92598C0FB006C9C08 /* String */,
 				8A8C94B22561453E00AA5D08 /* BitOperation */,
 				8A6ACCF824EA6AE500411FB4 /* Queue */,
 				8A1FF41C24E7F16000FA772C /* Backtrace */,
@@ -292,6 +295,14 @@
 			path = BitOperation;
 			sourceTree = "<group>";
 		};
+		8A8CF5E92598C0FB006C9C08 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				8A8CF5EA2598C12D006C9C08 /* String.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -384,6 +395,7 @@
 				8A789C36256C136900FE3CA5 /* Distance.swift in Sources */,
 				8A89E6F124F0ABE300D44797 /* Circle.swift in Sources */,
 				8A8D78AD24F51CEA00F5C328 /* Bag.swift in Sources */,
+				8A8CF5EB2598C12D006C9C08 /* String.swift in Sources */,
 				8A8D78AB24F5112200F5C328 /* LengthOfLIS.swift in Sources */,
 				5256E74F2477A6A00005CB62 /* TraversalTree.swift in Sources */,
 				52732A072489008200E7E766 /* Island.swift in Sources */,
