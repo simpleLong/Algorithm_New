@@ -8,6 +8,21 @@
 
 import Cocoa
 
+// MARK: -冒泡排序(从小到大排序)
+
+func bubbingSort(nums :[Int]) -> [Int] {
+    var nums = nums
+    for i  in 0..<nums.count {
+        for j in 0..<(nums.count - i - 1) {
+            if nums[j] > nums[j+1] {
+                (nums[j],nums[j+1]) = (nums[j+1],nums[j])
+            }
+        }
+    }
+    return nums
+}
+
+
 //MARK: 计数排序
 
 func countSort(array: inout [Int], maxValue: Int) -> [Int] {
@@ -130,3 +145,43 @@ public func shellSort(_ list: inout [Int]) {
 }
 
 
+func quickSort(arr : [Int]) -> [Int] {
+    var res  = arr
+    
+    qSort(&res, 0, res.count - 1)
+    
+    
+    return res
+    
+}
+
+func qSort(_ arr : inout [Int] ,_ low : Int ,_ high : Int) -> Void {
+
+    if low < high {
+        let povit = partition(&arr, low, high)
+        print("povit===\(povit),arr === \(arr)")
+        
+        qSort(&arr, low, povit-1)
+        qSort(&arr, povit + 1, high)
+
+    }
+}
+//
+//func partition(_ arr : inout [Int] ,_ low : Int ,_ high : Int) -> Int {
+//    let poivtIndex = Int.random(in: low...high)
+//    let povitNum = arr[poivtIndex]
+//    
+//    arr.swapAt(poivtIndex, high)
+//    var resIndex = low
+//    
+//    for i  in low...high {
+//        if arr[i] < povitNum {
+//            arr.swapAt(i, low)
+//            resIndex += 1
+//        }
+//    }
+//    arr.swapAt(resIndex, high)
+//    
+//    return resIndex
+//    
+//}

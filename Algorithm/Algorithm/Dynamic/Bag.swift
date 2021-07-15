@@ -54,3 +54,89 @@ func canPartition(_ nums: [Int]) -> Bool {
 func dp(_ start :Int,_ num :[Int] ,target: Int){
     
 }
+/**
+ 给定一个数组,和一个target,找出所有符合条件的组合
+ 例如 nums = [1,2,2,3,2,4,7],target = 7
+ [
+ [1,2,2,2],
+ [2,3,2],
+ [2,2,3],
+ [2,3,2]
+ [1,2,4],
+ [1,2,4],
+ [1,2,4],//这两个2的下标不一样不当做重复的
+ [3,4],
+ [7]
+ ]
+ 
+ */
+//var allRes = [[Int]]()
+func getTheAllcombination(nums:[Int],target:Int) -> [[Int]] {
+    var dp = [([[Int]],[[Int]])].init(repeating: ([[]], [[]]), count: nums.count)
+    if nums.count == 0 {
+        return [[]]
+    }
+    if nums[0] == target {//元组的第0个元素装的是不符合条件的组合,第一个元素装的是符合条件的组合
+         dp[0].1.append([nums[0]])
+    }else{
+        dp[0].0.append([nums[0]])
+    }
+    
+    for i  in 1..<nums.count {
+        
+        dp[i].1 = dp[i-1].1
+        dp[i].0 = dp[i-1].0
+        for list in dp[i].0 {
+
+            let sum =   list.reduce(0) { (res, element) -> Int in
+                res + element
+            }
+            var array = list
+            array.append(nums[i])
+            if sum + nums[i] == target{
+
+                dp[i].1.append(array)
+            }else{
+
+                dp[i].0.append(array)
+            }
+        }
+    }
+    return dp[nums.count-1].1
+}
+
+//private func help(start: Int ,end: Int ,nums :[Int] ,target: Int) -> [[Int]]{
+//    
+//    var dp = [([[Int]],[[Int]])].init(repeating: ([[Int]](), [[Int]]()), count: nums.count)
+//    if nums.count == 0 {
+//        return [[]]
+//    }
+//    if nums[0] == target {//元组的第0个元素装的是不符合条件的组合,第一个元素装的是符合条件的组合
+//         dp[0].1.append([nums[0]])
+//    }else{
+//        dp[0].0.append([nums[0]])
+//    }
+//    
+//    for i  in 1..<nums.count {
+//        
+//        dp[i].1 = dp[i-1].1
+//        dp[i].0 = dp[i-1].0
+//        for list in dp[i].0 {
+//
+//            let sum =   list.reduce(0) { (res, element) -> Int in
+//                res + element
+//            }
+//            var array = list
+//            array.append(nums[i])
+//            if sum + nums[i] == target{
+//
+//                dp[i].1.append(array)
+//            }else{
+//
+//                dp[i].0.append(array)
+//            }
+//        }
+//    }
+//    return dp[nums.count-1].1
+//    
+//}

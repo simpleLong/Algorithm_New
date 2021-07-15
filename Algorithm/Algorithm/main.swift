@@ -7,8 +7,9 @@
 //
 
 import Foundation
-let nums = [3,2,1,6,0,5]
-print(nums[0...5])
+//fileprivate let nums = [1,2,2,3,2,4,7]
+//fileprivate let res1 = getTheAllcombination(nums: nums, target: 7)
+
 
 
 isIsomorphic("abab","baba")
@@ -20,10 +21,43 @@ initListNodeSolution()
 let res2 = reverseKGroup(node1, 2)
 print(res2?.description)
 
+var nums : [[Character]] = [["5","3",".",".","7",".",".",".","."],["6",".",".","1","9","5",".",".","."],[".","9","8",".",".",".",".","6","."],["8",".",".",".","6",".",".",".","3"],["4",".",".","8",".","3",".",".","1"],["7",".",".",".","2",".",".",".","6"],[".","6",".",".",".",".","2","8","."],[".",".",".","4","1","9",".",".","5"],[".",".",".",".","8",".",".","7","9"]]
+
+
+solveSudoku(&nums)
+
+
+func partition(_ arr : inout [Int] ,_ low : Int ,_ high : Int) -> Int {
+    let poivtIndex = 2//Int.random(in: low...high)
+    let povitNum = arr[poivtIndex]
+    print("povitNum===",povitNum)
+    
+    arr.swapAt(poivtIndex, high)
+    var resIndex = low
+    
+    for i  in low...high {
+        if arr[i] < povitNum {
+            arr.swapAt(i, resIndex)
+            resIndex += 1
+        }
+    }
+    arr.swapAt(resIndex, high)
+    print("arr===",arr)
+    return resIndex
+    
+}
+
+
+let str = "babad"
+var sortNums = [2,0,2,1,1,0]
 
 
 
-lengthOfLIS([1,3,6,7,9,4,10,5,6])
+
+
+
+//let res1 = quickSort(arr: sortNums)
+
 
 
 
