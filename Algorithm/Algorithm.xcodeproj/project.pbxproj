@@ -40,10 +40,7 @@
 		8A727B3024A78E68007C49AE /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A727B2F24A78E68007C49AE /* Set.swift */; };
 		8A727B3224A79010007C49AE /* ProductExceptSelf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A727B3124A79010007C49AE /* ProductExceptSelf.swift */; };
 		8A89E6F124F0ABE300D44797 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89E6F024F0ABE300D44797 /* Circle.swift */; };
-
-		8A8C94B42561455F00AA5D08 /* BitOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C94B32561455F00AA5D08 /* BitOperation.swift */; };
 		8A8CF5EB2598C12D006C9C08 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8CF5EA2598C12D006C9C08 /* String.swift */; };
-
 		8A8D78AB24F5112200F5C328 /* LengthOfLIS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D78AA24F5112200F5C328 /* LengthOfLIS.swift */; };
 		8A8D78AD24F51CEA00F5C328 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D78AC24F51CEA00F5C328 /* Bag.swift */; };
 		8A933AED2483FBEB00D6B0F7 /* SortList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A933AEC2483FBEB00D6B0F7 /* SortList.swift */; };
@@ -104,10 +101,7 @@
 		8A727B2F24A78E68007C49AE /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 		8A727B3124A79010007C49AE /* ProductExceptSelf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductExceptSelf.swift; sourceTree = "<group>"; };
 		8A89E6F024F0ABE300D44797 /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
-
-		8A8C94B32561455F00AA5D08 /* BitOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitOperation.swift; sourceTree = "<group>"; };
 		8A8CF5EA2598C12D006C9C08 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-
 		8A8D78AA24F5112200F5C328 /* LengthOfLIS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LengthOfLIS.swift; sourceTree = "<group>"; };
 		8A8D78AC24F51CEA00F5C328 /* Bag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bag.swift; sourceTree = "<group>"; };
 		8A933AEC2483FBEB00D6B0F7 /* SortList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortList.swift; sourceTree = "<group>"; };
@@ -151,10 +145,7 @@
 		5256E7432477A4FA0005CB62 /* Algorithm */ = {
 			isa = PBXGroup;
 			children = (
-
 				8A8CF5E92598C0FB006C9C08 /* String */,
-				8A8C94B22561453E00AA5D08 /* BitOperation */,
-
 				8ACBF91125626CE50010E26F /* LRU */,
 				8AC9CC7A255D310000715649 /* TwoPoint */,
 				8A6ACCF824EA6AE500411FB4 /* Queue */,
@@ -299,6 +290,14 @@
 			path = HashMap;
 			sourceTree = "<group>";
 		};
+		8A8CF5E92598C0FB006C9C08 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				8A8CF5EA2598C12D006C9C08 /* String.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
 		8AC9CC7A255D310000715649 /* TwoPoint */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,14 +312,6 @@
 				8AC14AB2257502CF00E3925C /* LRU.swift */,
 			);
 			path = LRU;
-			sourceTree = "<group>";
-		};
-		8A8CF5E92598C0FB006C9C08 /* String */ = {
-			isa = PBXGroup;
-			children = (
-				8A8CF5EA2598C12D006C9C08 /* String.swift */,
-			);
-			path = String;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -549,7 +540,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KRYE8VW74K;
+				DEVELOPMENT_TEAM = 7FJKXBQ3J7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -560,7 +551,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KRYE8VW74K;
+				DEVELOPMENT_TEAM = 7FJKXBQ3J7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

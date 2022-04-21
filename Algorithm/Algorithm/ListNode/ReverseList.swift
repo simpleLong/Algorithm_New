@@ -22,22 +22,22 @@ import Foundation
 
 //MARK: 迭代
 public  func reverseList(_ head: ListNode?) -> ListNode? {
-
-
     
     var cur = head
-
+    
     var pre : ListNode? = nil
     
     while cur != nil {
-      let  next = cur?.next
+        let  next = cur?.next
         cur?.next = pre
         
         (pre ,cur) = (cur,next)
     }
-
+    
     return pre
 }
+
+
 
 //MARK: 递归方式
 //public  func reverseList(_ head: ListNode?) -> ListNode? {
@@ -45,36 +45,17 @@ public  func reverseList(_ head: ListNode?) -> ListNode? {
 //    if head == nil || head?.next == nil{
 //        return head
 //    }
-//    let next = head?.next
 //
-//    let res = reverseList(head?.next)
 //
+//    let res = reverseList(head?.next)//res = 2
+//    head?.next?.next = head
 //    head?.next = nil
-//    next?.next = head
+//
 //    return res
 //
 //
 //
-
 //}
-
-//MARK: 递归方式
-public  func reverseList(_ head: ListNode?) -> ListNode? {
-    
-    if head == nil || head?.next == nil{
-        return head
-    }
-    
-    
-    let res = reverseList(head?.next)
-    head?.next?.next = head
-    head?.next = nil
-    
-    return res
-    
-    
-    
-}
 
 /**
  92. 反转链表 II
@@ -251,7 +232,7 @@ func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
     let head = ListNode(0)
     var l3 : ListNode? = head
     var plusOne = 0
-        
+    
     while l1 != nil || l2 != nil || plusOne > 0 {
         
         let  sum  = (l1?.val ?? 0) + (l2?.val ?? 0)  + plusOne
