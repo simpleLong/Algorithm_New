@@ -11,9 +11,8 @@ import Foundation
 //fileprivate let res1 = getTheAllcombination(nums: nums, target: 7)
 
 
-let resG = nextGreaterElement([4,1,2], [1,3,4,2])
-print(res)
 
+let num = coinChange([1], 0)
 //isIsomorphic("abab","baba")
 //let res1 =  constructMaximumBinaryTree(nums)
 //initListNodeSolution()
